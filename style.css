@@ -1,0 +1,1031 @@
+/* ============================================
+   EFREI - Département Informatique
+   Feuille de style principale (style.css)
+   ============================================ */
+
+/* Import des polices (charte graphique EFREI) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@300;400&display=swap');
+
+/* ---- Variables couleurs (charte graphique) ---- */
+:root {
+    --bleu:   #0A316C;   /* Bleu Académique - fond principal */
+    --blanc:  #FFFFFF;   /* Blanc Pur */
+    --cyan:   #81ECEC;   /* Cyan Technologique - accents */
+    --jaune:  #FDCB6E;   /* Jaune Électrique - call-to-action */
+    --gris-fond: #f4f6f9;
+    --gris-texte: #333333;
+    --bleu-clair: #1a4a8a;
+}
+
+/* ---- Reset de base ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--gris-texte);
+    background-color: var(--blanc);
+}
+
+/* ---- Titres (charte : Montserrat) ---- */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--blanc);
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--bleu);
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--bleu);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+a {
+    color: var(--bleu);
+    text-decoration: none;
+}
+
+/* ============================================
+   EN-TÊTE (obligatoire sur toutes les pages)
+   ============================================ */
+header {
+    background-color: var(--bleu);
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+/* Logo (charte : coin supérieur gauche, blanc sur bleu) */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    padding: 8px; /* zone de protection autour du logo */
+}
+
+.logo-icone {
+    width: 44px;
+    height: 44px;
+    background-color: var(--blanc);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--bleu);
+}
+
+.logo-texte {
+    color: var(--blanc);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.1;
+}
+
+.logo-texte small {
+    display: block;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+}
+
+nav ul li a {
+    color: var(--blanc);
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--cyan);
+    color: var(--bleu);
+}
+
+/* Menu burger (mobile) */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--blanc);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* ============================================
+   PIED DE PAGE (obligatoire sur toutes les pages)
+   ============================================ */
+footer {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    padding: 40px 40px 20px;
+    margin-top: 60px;
+}
+
+.footer-grille {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-col h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cyan);
+    margin-bottom: 14px;
+}
+
+.footer-col p,
+.footer-col a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 2;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--cyan);
+}
+
+/* Barre de navigation du footer (obligatoire - lien vers à propos) */
+.footer-nav {
+    max-width: 1200px;
+    margin: 18px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-nav a {
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--cyan);
+}
+
+/* Logos accréditations (charte : fond blanc en bas à droite) */
+.accreditations {
+    background-color: var(--blanc);
+    padding: 5px 12px;
+    border-radius: 4px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.accreditations span {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--bleu);
+    border: 1px solid var(--bleu);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.footer-bas {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 14px;
+}
+
+/* ============================================
+   HERO BANNER (diagonale - charte graphique)
+   ============================================ */
+.hero {
+    background-color: var(--bleu);
+    position: relative;
+    overflow: hidden;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+}
+
+/* Zone photographique à droite (découpe oblique) */
+.hero-photo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--bleu-clair);
+    clip-path: polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-contenu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Texte aligné à gauche (charte) */
+.hero-texte {
+    max-width: 520px;
+    text-align: left;
+}
+
+.hero-texte p {
+    color: rgba(255,255,255,0.85);
+    font-size: 18px;
+    margin: 18px 0 28px;
+}
+
+/* Hero des pages intérieures */
+.page-hero {
+    background-color: var(--bleu);
+    padding: 55px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 40%;
+    height: 100%;
+    background: rgba(129,236,236,0.07);
+    clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 { font-size: 34px; margin-bottom: 10px; }
+.page-hero p  { color: rgba(255,255,255,0.8); font-size: 17px; max-width: 600px; margin: 0; }
+
+/* Fil d'Ariane */
+.breadcrumb {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 12px;
+}
+.breadcrumb a { color: var(--cyan); }
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cyan {
+    background-color: var(--cyan);
+    color: var(--bleu);
+    border-color: var(--cyan);
+}
+.btn-cyan:hover {
+    background-color: transparent;
+    color: var(--cyan);
+}
+
+.btn-blanc {
+    background-color: transparent;
+    color: var(--blanc);
+    border-color: var(--blanc);
+    margin-left: 12px;
+}
+.btn-blanc:hover {
+    background-color: var(--blanc);
+    color: var(--bleu);
+}
+
+.btn-jaune {
+    background-color: var(--jaune);
+    color: var(--bleu);
+    border-color: var(--jaune);
+}
+.btn-jaune:hover {
+    background-color: transparent;
+    color: var(--jaune);
+}
+
+/* ============================================
+   SECTIONS & CONTENEUR
+   ============================================ */
+.section {
+    padding: 65px 40px;
+}
+
+.section-gris {
+    background-color: var(--gris-fond);
+}
+
+.section-bleu {
+    background-color: var(--bleu);
+}
+
+.section-bleu h2,
+.section-bleu h3 { color: var(--blanc); }
+.section-bleu h3 { color: var(--cyan); }
+.section-bleu p  { color: rgba(255,255,255,0.85); }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Titre de section centré avec ligne décorative */
+.titre-section {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titre-section h2::after {
+    content: '';
+    display: block;
+    width: 55px;
+    height: 4px;
+    background-color: var(--cyan);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.titre-section p {
+    color: #666;
+    font-size: 17px;
+    max-width: 580px;
+    margin: 8px auto 0;
+}
+
+.section-bleu .titre-section p { color: rgba(255,255,255,0.7); }
+
+/* ============================================
+   GRILLES
+   ============================================ */
+.grille-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.grille-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+/* ============================================
+   CARTES
+   ============================================ */
+.carte {
+    background-color: var(--blanc);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 28px rgba(10,49,108,0.13);
+}
+
+.carte-icone {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
+
+/* ============================================
+   CHIFFRES CLÉS
+   ============================================ */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-item { padding: 28px 15px; }
+
+.stat-nombre {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    color: var(--cyan);
+    display: block;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   CARROUSEL
+   ============================================ */
+.carrousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carrousel-piste {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carrousel-slide {
+    min-width: 100%;
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bleu-clair);
+}
+
+.carrousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Légende sur la photo */
+.carrousel-legende {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(10,49,108,0.85));
+    padding: 30px 25px 20px;
+    color: var(--blanc);
+}
+
+.carrousel-legende h3 {
+    color: var(--blanc);
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.carrousel-legende p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+}
+
+/* Boutons précédent / suivant */
+.carr-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.2);
+    color: var(--blanc);
+    border: 2px solid var(--blanc);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.carr-btn:hover {
+    background-color: var(--cyan);
+    color: var(--bleu);
+    border-color: var(--cyan);
+}
+
+.carr-prev { left: 14px; }
+.carr-next { right: 14px; }
+
+/* Points de navigation */
+.carrousel-points {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.point.actif {
+    background-color: var(--bleu);
+}
+
+/* ============================================
+   ÉVÉNEMENTS
+   ============================================ */
+.evenement {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--blanc);
+    border-radius: 8px;
+    border-left: 4px solid var(--cyan);
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.evt-date {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 58px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.evt-date .jour  { font-size: 22px; display: block; }
+.evt-date .mois  { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); }
+
+.evt-info h3     { margin-bottom: 6px; }
+.evt-info p      { margin: 0 0 10px; font-size: 15px; }
+
+/* ============================================
+   ACCÈS RAPIDES
+   ============================================ */
+.acces-rapides {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.acces-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 28px 18px;
+    background-color: var(--blanc);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--bleu);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.acces-btn:hover {
+    background-color: var(--bleu);
+    color: var(--blanc);
+    transform: translateY(-4px);
+}
+
+.acces-btn .icone { font-size: 34px; }
+
+/* ============================================
+   ONGLETS (formations)
+   ============================================ */
+.onglets {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.onglet-btn {
+    background: none;
+    border: none;
+    padding: 13px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.onglet-btn:hover { color: var(--bleu); }
+
+.onglet-btn.actif {
+    color: var(--bleu);
+    border-bottom-color: var(--bleu);
+}
+
+.onglet-contenu { display: none; }
+.onglet-contenu.actif { display: block; }
+
+/* ============================================
+   TABLEAUX (obligatoire)
+   ============================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+thead {
+    background-color: var(--bleu);
+    color: var(--blanc);
+}
+
+thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover { background-color: #f0f4ff; }
+
+tbody td {
+    padding: 13px 16px;
+    font-size: 14px;
+}
+
+tbody tr:nth-child(even) { background-color: #f8faff; }
+
+/* ============================================
+   ENSEIGNANTS
+   ============================================ */
+.prof-carte {
+    background: var(--blanc);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+    transition: transform 0.3s;
+}
+
+.prof-carte:hover { transform: translateY(-5px); }
+
+.prof-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background-color: var(--bleu-clair);
+}
+
+/* Placeholder si pas d'image */
+.prof-photo-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, var(--bleu), var(--bleu-clair));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: var(--blanc);
+}
+
+.prof-info {
+    padding: 20px;
+}
+
+.prof-info h3 { font-size: 17px; margin-bottom: 4px; }
+
+.prof-titre {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--cyan);
+    /* cyan sur blanc n'est pas assez lisible — on force une couleur sombre */
+    color: #0a7a7a;
+    margin-bottom: 10px;
+}
+
+.prof-bio {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ============================================
+   FORMULAIRE (obligatoire)
+   ============================================ */
+.form-groupe {
+    margin-bottom: 18px;
+}
+
+.form-groupe label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bleu);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-groupe input,
+.form-groupe select,
+.form-groupe textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: var(--gris-texte);
+    transition: border-color 0.3s;
+}
+
+.form-groupe input:focus,
+.form-groupe select:focus,
+.form-groupe textarea:focus {
+    outline: none;
+    border-color: var(--bleu);
+}
+
+.form-groupe input.erreur,
+.form-groupe textarea.erreur {
+    border-color: #e74c3c;
+}
+
+.msg-erreur {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+}
+
+.msg-succes {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-top: 16px;
+    display: none;
+    font-weight: 500;
+}
+
+/* ============================================
+   FAQ ACCORDÉON
+   ============================================ */
+.faq-item {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: var(--blanc);
+    border: none;
+    padding: 16px 20px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--bleu);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover { background-color: #f0f4ff; }
+
+.faq-question.ouvert {
+    background-color: var(--bleu);
+    color: var(--blanc);
+}
+
+.faq-icone {
+    font-size: 20px;
+    font-weight: 300;
+    transition: transform 0.3s;
+}
+
+.faq-question.ouvert .faq-icone { transform: rotate(45deg); }
+
+.faq-reponse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    padding: 0 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.faq-reponse.ouvert {
+    max-height: 250px;
+    padding: 14px 20px 18px;
+}
+
+/* ============================================
+   TOAST (notification JavaScript)
+   ============================================ */
+#toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background-color: var(--bleu);
+    color: var(--blanc);
+    padding: 14px 22px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    border-left: 4px solid var(--cyan);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s;
+    display: none;
+}
+
+#toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+/* ============================================
+   RESPONSIVE (media queries)
+   ============================================ */
+@media (max-width: 1024px) {
+    .grille-3   { grid-template-columns: repeat(2, 1fr); }
+    .stats      { grid-template-columns: repeat(2, 1fr); }
+    .acces-rapides { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    /* Menu mobile */
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0; right: 0;
+        background-color: var(--bleu);
+        padding: 16px 20px;
+        box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    }
+
+    nav.ouvert { display: block; }
+
+    nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    nav ul li a { display: block; padding: 12px 14px; }
+
+    .burger { display: flex; }
+
+    header { position: relative; }
+
+    /* Typographie */
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+
+    /* Hero */
+    .hero { min-height: auto; }
+    .hero-contenu { padding: 40px 20px; }
+    .hero-photo { display: none; }
+
+    /* Sections */
+    .section      { padding: 45px 20px; }
+    .page-hero    { padding: 38px 20px; }
+
+    /* Grilles */
+    .grille-3, .grille-2 { grid-template-columns: 1fr; }
+    .stats               { grid-template-columns: repeat(2, 1fr); }
+    .acces-rapides       { grid-template-columns: 1fr; }
+
+    /* Footer */
+    .footer-grille  { grid-template-columns: 1fr; gap: 20px; }
+    .footer-nav     { flex-direction: column; align-items: flex-start; }
+
+    /* Bouton secondaire passe en dessous */
+    .btn-blanc { margin-left: 0; margin-top: 10px; display: inline-block; }
+}
+
+@media (max-width: 480px) {
+    header { padding: 0 18px; }
+    .stats  { grid-template-columns: 1fr; }
+    .stat-nombre { font-size: 36px; }
+    footer  { padding: 30px 20px 16px; }
+}

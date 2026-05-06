@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corps Enseignant — Département Informatique EFREI</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ---- Carte prof avec effet hover ---- */
+        .prof-carte {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+            cursor: pointer;
+        }
+
+        /* L'image prend toute la carte, non rognée */
+        .prof-photo {
+            width: 100%;
+            height: 380px;
+            object-fit: contain;       /* image entière, pas de rognage */
+            object-position: center;
+            display: block;
+            background-color: #111;    /* fond sombre derrière l'image */
+            transition: transform 0.4s ease;
+        }
+
+        /* Légère mise à l'échelle au survol */
+        .prof-carte:hover .prof-photo {
+            transform: scale(1.03);
+        }
+
+        /* Bandeau nom toujours visible en bas */
+        .prof-nom-bandeau {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10,49,108,0.95));
+            padding: 40px 20px 18px;
+            color: #FFFFFF;
+            transition: opacity 0.3s ease;
+        }
+
+        .prof-nom-bandeau h3 {
+            color: #FFFFFF;
+            font-size: 19px;
+            margin-bottom: 3px;
+        }
+
+        .prof-nom-bandeau .prof-titre {
+            color: #81ECEC;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        /* Overlay parcours — caché par défaut, visible au survol */
+        .prof-overlay {
+            position: absolute;
+            inset: 0;                  /* couvre toute la carte */
+            background: rgba(10,49,108,0.93);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 25px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        /* Affichage de l'overlay au survol */
+        .prof-carte:hover .prof-overlay {
+            opacity: 1;
+        }
+
+        /* Cacher le bandeau quand l'overlay est visible */
+        .prof-carte:hover .prof-nom-bandeau {
+            opacity: 0;
+        }
+
+        .prof-overlay h3 {
+            color: #FFFFFF;
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .prof-overlay .prof-titre {
+            color: #81ECEC;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .prof-overlay .prof-bio {
+            color: rgba(255,255,255,0.88);
+            font-size: 14px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Grille en 2 colonnes bien larges */
+        .grille-profs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 768px) {
+            .grille-profs {
+                grid-template-columns: 1fr;
+            }
+            .prof-photo {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================================================
+     EN-TÊTE (obligatoire)
+     ================================================ -->
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icone">eF</div>
+            <div class="logo-texte">
+                EFREI
+                <small>Département Informatique</small>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="equipe.html" class="active">Corps Enseignant</a></li>
+                <li><a href="apropos.html">Contact &amp; À propos</a></li>
+            </ul>
+        </nav>
+        <button class="burger" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+
+<!-- ================================================
+     HERO PAGE
+     ================================================ -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a> &rsaquo; Corps Enseignant &amp; Recherche
+        </div>
+        <h1>Corps Enseignant &amp; Recherche</h1>
+        <p>Des chercheurs et experts passionnés pour vous accompagner tout au long de votre parcours.</p>
+    </div>
+</section>
+
+
+<!-- ================================================
+     PRÉSENTATION DE L'ÉQUIPE
+     ================================================ -->
+<section class="section">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Nos Enseignants-Chercheurs</h2>
+            <p>Survolez une carte pour découvrir le parcours de chaque enseignant</p>
+        </div>
+
+        <div class="grille-profs">
+
+            <!-- Prof 1 : Cherifa Ben Khelil -->
+            <div class="prof-carte">
+                <img
+                    class="prof-photo"
+                    src="images/cherifa.png"
+                    alt="Photo de Cherifa Ben Khelil"
+                >
+                <!-- Bandeau nom visible en permanence -->
+                <div class="prof-nom-bandeau">
+                    <h3>Cherifa Ben Khelil</h3>
+                    <span class="prof-titre">Maître de Conférences</span>
+                </div>
+                <!-- Overlay parcours au survol -->
+                <div class="prof-overlay">
+                    <h3>Cherifa Ben Khelil</h3>
+                    <span class="prof-titre">Maître de Conférences</span>
+                    <p class="prof-bio">
+                        Cherifa a obtenu son doctorat en 2019, réalisant une thèse en cotutelle
+                        entre l'École Nationale des Sciences de l'Informatique de la Manouba
+                        en Tunisie (laboratoire RIADI) et l'Université d'Orléans en France
+                        (Laboratoire LIFO). Elle rejoint l'Efrei en 2024.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Prof 2 : Carlo Bianca -->
+            <div class="prof-carte">
+                <img
+                    class="prof-photo"
+                    src="images/bianca.png"
+                    alt="Photo de Carlo Bianca"
+                >
+                <div class="prof-nom-bandeau">
+                    <h3>Carlo Bianca</h3>
+                    <span class="prof-titre">Professeur — Mathématiques pour l'Ingénieur</span>
+                </div>
+                <div class="prof-overlay">
+                    <h3>Carlo Bianca</h3>
+                    <span class="prof-titre">Professeur — Mathématiques pour l'Ingénieur</span>
+                    <p class="prof-bio">
+                        Carlo Bianca obtient son doctorat en Mathématiques pour les Sciences
+                        de l'Ingénieur à l'École Polytechnique de Turin (Italie) en 2008.
+                        En 2010, il obtient le prix INDAM-SIMAI pour la meilleure thèse
+                        de doctorat en Italie entre 2007 et 2009.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Prof 3 : Asma Gabis -->
+            <div class="prof-carte">
+                <img
+                    class="prof-photo"
+                    src="images/asma.png"
+                    alt="Photo de Asma Gabis"
+                >
+                <div class="prof-nom-bandeau">
+                    <h3>Asma Gabis</h3>
+                    <span class="prof-titre">Maître de Conférences — Informatique</span>
+                </div>
+                <div class="prof-overlay">
+                    <h3>Asma Gabis</h3>
+                    <span class="prof-titre">Maître de Conférences — Informatique</span>
+                    <p class="prof-bio">
+                        Asma Gabis a obtenu son diplôme d'ingénieur d'État en informatique
+                        en 2006 à l'École Nationale Supérieure d'Informatique (ESI), avant
+                        d'obtenir en 2010 son Magistère. En 2021 elle obtient son doctorat
+                        et elle rejoint par la suite l'Efrei en 2022.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Prof 4 : Mohamed Hamidi -->
+            <div class="prof-carte">
+                <img
+                    class="prof-photo"
+                    src="images/mohamed.png"
+                    alt="Photo de Mohamed Hamidi"
+                >
+                <div class="prof-nom-bandeau">
+                    <h3>Mohamed Hamidi</h3>
+                    <span class="prof-titre">Maître de Conférences — Sécurité &amp; Vision par Ordinateur</span>
+                </div>
+                <div class="prof-overlay">
+                    <h3>Mohamed Hamidi</h3>
+                    <span class="prof-titre">Maître de Conférences — Sécurité &amp; Vision par Ordinateur</span>
+                    <p class="prof-bio">
+                        Mohamed Hamidi a obtenu son doctorat en 2019 à l'Université Med V
+                        de Rabat au Maroc en sécurité multimédia et vision par ordinateur.
+                        Il a réalisé sa thèse en collaboration avec le Laboratoire d'Informatique
+                        de Bourgogne (LIB) de l'Université de Bourgogne à Dijon, et le
+                        laboratoire PRISME à l'École Polytechnique d'Orléans.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     DOMAINES D'EXPERTISE
+     ================================================ -->
+<section class="section section-gris">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Domaines d'Expertise &amp; Recherche</h2>
+            <p>Les grandes thématiques portées par notre équipe</p>
+        </div>
+
+        <div class="grille-2">
+
+            <div class="carte">
+                <div class="carte-icone">🤖</div>
+                <h3>Intelligence Artificielle</h3>
+                <p>
+                    Apprentissage automatique, réseaux de neurones, vision par ordinateur
+                    et traitement du langage naturel. Collaborations avec des entreprises
+                    du secteur numérique.
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">🛡️</div>
+                <h3>Cyberdéfense</h3>
+                <p>
+                    Sécurité multimédia, cryptographie, analyse de vulnérabilités
+                    et protection des systèmes d'information. Recherches en lien
+                    avec le laboratoire PRISME.
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">📐</div>
+                <h3>Mathématiques pour l'Ingénieur</h3>
+                <p>
+                    Modélisation mathématique, équations différentielles et méthodes
+                    numériques appliquées aux sciences de l'ingénieur.
+                    Prix INDAM-SIMAI 2010.
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">📊</div>
+                <h3>Big Data &amp; Systèmes Distribués</h3>
+                <p>
+                    Traitement de grandes masses de données, architectures distribuées
+                    et bases de données avancées. Applications dans l'industrie
+                    et la recherche collaborative.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     PUBLICATIONS & PROJETS DE RECHERCHE (tableau)
+     ================================================ -->
+<section class="section">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Publications &amp; Projets de Recherche</h2>
+            <p>Travaux récents de notre équipe enseignante</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Auteur(s)</th>
+                    <th>Titre</th>
+                    <th>Domaine</th>
+                    <th>Année</th>
+                    <th>Journal / Conférence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>M. Hamidi</td>
+                    <td>Sécurité multimédia et vision par ordinateur</td>
+                    <td>Sécurité &amp; IA</td>
+                    <td>2019</td>
+                    <td>Université Med V — Thèse</td>
+                </tr>
+                <tr>
+                    <td>C. Ben Khelil</td>
+                    <td>Thèse en cotutelle RIADI / LIFO</td>
+                    <td>Informatique</td>
+                    <td>2019</td>
+                    <td>ENSI Manouba &amp; Université d'Orléans</td>
+                </tr>
+                <tr>
+                    <td>C. Bianca</td>
+                    <td>Mathématiques pour les Sciences de l'Ingénieur</td>
+                    <td>Mathématiques appliquées</td>
+                    <td>2008</td>
+                    <td>École Polytechnique de Turin</td>
+                </tr>
+                <tr>
+                    <td>C. Bianca</td>
+                    <td>Prix INDAM-SIMAI — Meilleure thèse de doctorat</td>
+                    <td>Mathématiques</td>
+                    <td>2010</td>
+                    <td>INDAM-SIMAI (Italie)</td>
+                </tr>
+                <tr>
+                    <td>A. Gabis</td>
+                    <td>Doctorat en Informatique</td>
+                    <td>Informatique</td>
+                    <td>2021</td>
+                    <td>ESI — École Nationale Supérieure d'Informatique</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     PIED DE PAGE (obligatoire)
+     ================================================ -->
+<footer>
+    <div class="footer-grille">
+        <div class="footer-col">
+            <h4>EFREI — Département Informatique</h4>
+            <p>30-32 Avenue de la République<br>94800 Villejuif, France</p>
+            <p>📞 01 46 77 46 77</p>
+            <p>✉ info-dept@efrei.fr</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="equipe.html">Corps Enseignant</a>
+            <a href="apropos.html">Contact &amp; À propos</a>
+        </div>
+        <div class="footer-col">
+            <h4>Liens utiles</h4>
+            <a href="https://www.efrei.fr" target="_blank">Site EFREI</a>
+            <a href="apropos.html#admissions">Admissions</a>
+            <a href="apropos.html#faq">FAQ</a>
+        </div>
+    </div>
+    <div class="footer-nav">
+        <div>
+            <a href="index.html">Accueil</a> |
+            <a href="formations.html">Formations</a> |
+            <a href="equipe.html">Corps Enseignant</a> |
+            <a href="apropos.html"><strong>À propos du projet</strong></a>
+        </div>
+        <div class="accreditations">
+            <span>CGE</span><span>CTI</span><span>EESPIG</span>
+        </div>
+    </div>
+    <div class="footer-bas">
+        <p>&copy; 2026 EFREI Paris — Département Informatique — Projet TI402</p>
+    </div>
+</footer>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

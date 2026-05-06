@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; À propos — Département Informatique EFREI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================================================
+     EN-TÊTE (obligatoire)
+     ================================================ -->
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icone">eF</div>
+            <div class="logo-texte">
+                EFREI
+                <small>Département Informatique</small>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="equipe.html">Corps Enseignant</a></li>
+                <li><a href="apropos.html" class="active">Contact &amp; À propos</a></li>
+            </ul>
+        </nav>
+        <button class="burger" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+
+<!-- ================================================
+     HERO PAGE
+     ================================================ -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a> &rsaquo; Contact &amp; Admissions
+        </div>
+        <h1>Contact &amp; Admissions</h1>
+        <p>Une question ? Une candidature ? Notre équipe est là pour vous accompagner.</p>
+    </div>
+</section>
+
+
+<!-- ================================================
+     COORDONNÉES DU DÉPARTEMENT
+     ================================================ -->
+<section class="section">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Coordonnées du Département</h2>
+        </div>
+
+        <div class="grille-3">
+
+            <div class="carte">
+                <div class="carte-icone">📍</div>
+                <h3>Adresse</h3>
+                <p>
+                    30-32 Avenue de la République<br>
+                    94800 Villejuif, France
+                </p>
+                <p><em>Campus principal de l'EFREI Paris</em></p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">📞</div>
+                <h3>Téléphone &amp; Email</h3>
+                <p>📞 01 46 77 46 77</p>
+                <p>✉ info-dept@efrei.fr</p>
+                <p>✉ admissions@efrei.fr</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">🕐</div>
+                <h3>Horaires d'accueil</h3>
+                <p>Lundi — Vendredi<br>9h00 — 12h30 / 14h00 — 17h00</p>
+                <p><em>Hors vacances scolaires</em></p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     FORMULAIRE DE CONTACT (obligatoire)
+     ================================================ -->
+<section class="section section-gris">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Nous Écrire</h2>
+            <p>Remplissez le formulaire, nous vous répondrons dans les 48h ouvrées</p>
+        </div>
+
+        <div class="grille-2">
+
+            <!-- Formulaire -->
+            <div>
+                <form id="formulaire-contact" novalidate>
+
+                    <div class="form-groupe">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom">
+                        <span class="msg-erreur"></span>
+                    </div>
+
+                    <div class="form-groupe">
+                        <label for="email">Adresse email *</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.fr">
+                        <span class="msg-erreur"></span>
+                    </div>
+
+                    <div class="form-groupe">
+                        <label for="sujet">Sujet de votre demande</label>
+                        <select id="sujet" name="sujet">
+                            <option value="">-- Choisissez un sujet --</option>
+                            <option value="admissions">Renseignements sur les admissions</option>
+                            <option value="formations">Informations sur les formations</option>
+                            <option value="stage">Offre de stage ou alternance</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-groupe">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Décrivez votre demande…"></textarea>
+                        <span class="msg-erreur"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-cyan">Envoyer le message</button>
+
+                    <!-- Message affiché après envoi réussi (JavaScript) -->
+                    <div class="msg-succes">
+                        ✅ Votre message a bien été envoyé ! Nous vous répondrons dans les 48h.
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Infos supplémentaires -->
+            <div>
+                <div class="carte" style="margin-bottom: 20px;">
+                    <div class="carte-icone">💡</div>
+                    <h3>Besoin d'une réponse rapide ?</h3>
+                    <p>
+                        Pour les questions urgentes concernant les admissions,
+                        appelez directement le service des inscriptions au
+                        <strong>01 46 77 46 77</strong>.
+                    </p>
+                </div>
+                <div class="carte">
+                    <div class="carte-icone">📅</div>
+                    <h3>Prochaine Journée Portes Ouvertes</h3>
+                    <p>
+                        <strong>14 juin 2026</strong><br>
+                        Campus de Villejuif — 10h00 à 17h00
+                    </p>
+                    <p>
+                        Visitez le campus, rencontrez nos enseignants
+                        et découvrez tous nos programmes.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     PROCÉDURE D'ADMISSION
+     ================================================ -->
+<section class="section" id="admissions">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Procédure d'Admission</h2>
+            <p>Comment intégrer le Département Informatique de l'EFREI ?</p>
+        </div>
+
+        <div class="grille-3">
+
+            <div class="carte">
+                <div class="carte-icone">📌</div>
+                <h3>Voie Post-Bac (Bachelor)</h3>
+                <p>
+                    Candidature via <strong>Parcoursup</strong> pour les lycéens
+                    en terminale. Sélection sur dossier scolaire et lettre de motivation.
+                </p>
+                <p>
+                    <strong>Profils :</strong> Bac général (Maths / NSI),
+                    Bac technologique (STI2D, STL).
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">🏆</div>
+                <h3>Concours Puissance Alpha</h3>
+                <p>
+                    Pour les étudiants en classes préparatoires (MP, PC, PSI, PT).
+                    Intégration directe en Cycle Ingénieur après le concours.
+                </p>
+                <p><strong>Épreuves :</strong> Écrites + oral en juin.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">🔄</div>
+                <h3>Admissions Parallèles</h3>
+                <p>
+                    Pour les étudiants en BTS, DUT ou Licence.
+                    Intégration possible en L2, L3 ou directement en Cycle Ingénieur.
+                </p>
+                <p>
+                    <strong>Dossier :</strong> Relevés de notes + CV + lettre de motivation.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     FAQ ACCORDÉON (JavaScript)
+     ================================================ -->
+<section class="section section-gris" id="faq">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Foire Aux Questions (FAQ)</h2>
+            <p>Les réponses aux questions les plus fréquentes</p>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Quels sont les frais de scolarité ?
+                <span class="faq-icone">+</span>
+            </button>
+            <div class="faq-reponse">
+                Environ 7 500 €/an pour les Bachelors et 9 500 €/an pour le Cycle Ingénieur.
+                Des bourses et aides financières sont disponibles. En alternance, les frais
+                sont souvent pris en charge par l'entreprise. Contactez le service financier
+                pour plus de détails.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Est-il possible de faire sa formation en alternance ?
+                <span class="faq-icone">+</span>
+            </button>
+            <div class="faq-reponse">
+                Oui, tous nos programmes sont accessibles en alternance (contrat d'apprentissage
+                ou contrat de professionnalisation). Rythme habituel : 3 semaines en entreprise /
+                1 semaine à l'école. Le département dispose d'un service dédié pour vous aider
+                à trouver votre entreprise d'accueil.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Quels langages et technologies sont enseignés ?
+                <span class="faq-icone">+</span>
+            </button>
+            <div class="faq-reponse">
+                Nos programmes couvrent Python, Java, JavaScript (HTML / CSS), C/C++, SQL,
+                ainsi que des outils cloud (AWS, Azure, Docker) et data science (TensorFlow,
+                Pandas, Spark). Les technologies sont régulièrement mises à jour.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Le diplôme est-il reconnu par l'État ?
+                <span class="faq-icone">+</span>
+            </button>
+            <div class="faq-reponse">
+                Oui. L'EFREI est accrédité par la CTI (Commission des Titres d'Ingénieur).
+                Le diplôme d'ingénieur est un grade master reconnu par l'État.
+                Les Bachelors confèrent le grade de Licence.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Y a-t-il des logements étudiants disponibles ?
+                <span class="faq-icone">+</span>
+            </button>
+            <div class="faq-reponse">
+                Des résidences universitaires CROUS sont disponibles à proximité du campus.
+                L'EFREI dispose également d'un service logement pour accompagner
+                les étudiants dans leurs recherches.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     PLAN D'ACCÈS (Métro Ligne 7 et 15)
+     ================================================ -->
+<section class="section" id="plan">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Plan d'Accès</h2>
+            <p>Comment rejoindre le campus de Villejuif</p>
+        </div>
+
+        <!-- Carte interactive via OpenStreetMap (sans clé API) -->
+        <div style="border-radius: 8px; overflow: hidden; margin-bottom: 28px; border: 2px solid #ddd;">
+            <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=2.355,48.789,2.365,48.795&amp;layer=mapnik&amp;marker=48.792,2.360"
+                width="100%"
+                height="320"
+                style="border: none; display: block;"
+                title="Carte du campus EFREI Villejuif"
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="grille-3">
+
+            <div class="carte">
+                <div class="carte-icone">🚇</div>
+                <h3>Métro Ligne 7</h3>
+                <p>
+                    Station <strong>Villejuif-Léo Lagrange</strong><br>
+                    5 minutes à pied du campus.
+                </p>
+                <p>Depuis Paris (Place d'Italie) : environ 15 min.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">🚇</div>
+                <h3>Métro Ligne 15</h3>
+                <p>
+                    Station <strong>Villejuif Institut Gustave Roussy</strong><br>
+                    8 minutes à pied du campus.
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">🚗</div>
+                <h3>En Voiture</h3>
+                <p>
+                    Parking disponible sur le campus.
+                    Accès depuis le périphérique Porte d'Ivry
+                    ou Porte de Choisy.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     À PROPOS DU PROJET (obligatoire)
+     Noms des membres + travail réalisé
+     ================================================ -->
+<section class="section section-bleu" id="apropos">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>À Propos du Projet TI402</h2>
+            <p>Présentation de l'équipe étudiante et du travail réalisé</p>
+        </div>
+
+        <!-- Description générale du projet -->
+        <div style="background: rgba(255,255,255,0.08); border-radius: 8px; padding: 28px;
+                    margin-bottom: 36px; border-left: 4px solid var(--cyan);">
+            <h3>Description du projet</h3>
+            <p>
+                Ce site vitrine a été réalisé dans le cadre du projet TI402 du
+                Département Informatique de l'EFREI Paris, année 2025-2026,
+                encadré par M. Mohamed Hamidi.
+            </p>
+            <p>
+                Le site a été développé entièrement en <strong>HTML5, CSS3 et JavaScript pur</strong>,
+                sans framework ni bibliothèque externe, en respectant la charte graphique
+                officielle du département et toutes les consignes de l'énoncé.
+            </p>
+            <p>
+                Il comprend <strong>4 pages</strong> : Accueil (carrousel, chiffres clés,
+                événements), Formations (onglets, tableau filtrable), Corps Enseignant
+                (biographies réelles, publications) et cette page Contact &amp; À propos
+                (formulaire validé en JS, FAQ accordéon, carte).
+            </p>
+        </div>
+
+        <!-- Cartes membres (à remplir avec vos vrais noms) -->
+        <div class="grille-3">
+
+            <div class="carte">
+                <h3>Prénom NOM 1</h3>
+                <p style="color: var(--cyan); font-size: 13px; font-weight: 600;
+                          text-transform: uppercase; margin-bottom: 10px;">
+                    Rôle dans le groupe
+                </p>
+                <p>
+                    Décrivez ici ce que vous avez fait personnellement :
+                    pages créées, fonctionnalités développées,
+                    contenu rédigé, etc.
+                </p>
+            </div>
+
+            <div class="carte">
+                <h3>Prénom NOM 2</h3>
+                <p style="color: var(--cyan); font-size: 13px; font-weight: 600;
+                          text-transform: uppercase; margin-bottom: 10px;">
+                    Rôle dans le groupe
+                </p>
+                <p>
+                    Décrivez ici ce que vous avez fait personnellement :
+                    pages créées, fonctionnalités développées,
+                    contenu rédigé, etc.
+                </p>
+            </div>
+
+            <div class="carte">
+                <h3>Prénom NOM 3</h3>
+                <p style="color: var(--cyan); font-size: 13px; font-weight: 600;
+                          text-transform: uppercase; margin-bottom: 10px;">
+                    Rôle dans le groupe
+                </p>
+                <p>
+                    Décrivez ici ce que vous avez fait personnellement :
+                    pages créées, fonctionnalités développées,
+                    contenu rédigé, etc.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Tableau des contributions (obligatoire : tableau) -->
+        <br>
+        <h3>Récapitulatif des Contributions</h3>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Membre</th>
+                    <th>Pages réalisées</th>
+                    <th>Fonctionnalités développées</th>
+                    <th>Technologies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Prénom NOM 1</td>
+                    <td>index.html</td>
+                    <td>Structure HTML, Carrousel, Chiffres clés animés</td>
+                    <td>HTML5, JavaScript</td>
+                </tr>
+                <tr>
+                    <td>Prénom NOM 2</td>
+                    <td>formations.html, style.css</td>
+                    <td>Tableau filtrable, Onglets, CSS responsive</td>
+                    <td>HTML5, CSS3, JavaScript</td>
+                </tr>
+                <tr>
+                    <td>Prénom NOM 3</td>
+                    <td>equipe.html, apropos.html</td>
+                    <td>Formulaire validé, FAQ accordéon, Plan d'accès</td>
+                    <td>HTML5, CSS3, JavaScript</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <div style="text-align: center; margin-top: 20px;">
+            <p style="color: rgba(255,255,255,0.55); font-size: 13px;">
+                Projet TI402 — EFREI Paris — Année universitaire 2025-2026
+            </p>
+            <a href="index.html" class="btn btn-cyan" style="margin-top: 14px;">
+                Retour à l'Accueil
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     PIED DE PAGE (obligatoire — lien vers à propos)
+     ================================================ -->
+<footer>
+    <div class="footer-grille">
+        <div class="footer-col">
+            <h4>EFREI — Département Informatique</h4>
+            <p>30-32 Avenue de la République<br>94800 Villejuif, France</p>
+            <p>📞 01 46 77 46 77</p>
+            <p>✉ info-dept@efrei.fr</p>
+            <p>Métro Ligne 7 — Villejuif-Léo Lagrange</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="equipe.html">Corps Enseignant</a>
+            <a href="apropos.html">Contact &amp; À propos</a>
+        </div>
+        <div class="footer-col">
+            <h4>Sur cette page</h4>
+            <a href="#admissions">Admissions</a>
+            <a href="#faq">FAQ</a>
+            <a href="#plan">Plan d'accès</a>
+            <a href="#apropos">À propos du projet</a>
+        </div>
+    </div>
+    <div class="footer-nav">
+        <div>
+            <a href="index.html">Accueil</a> |
+            <a href="formations.html">Formations</a> |
+            <a href="equipe.html">Corps Enseignant</a> |
+            <a href="apropos.html"><strong>À propos du projet</strong></a>
+        </div>
+        <div class="accreditations">
+            <span>CGE</span><span>CTI</span><span>EESPIG</span>
+        </div>
+    </div>
+    <div class="footer-bas">
+        <p>&copy; 2026 EFREI Paris — Département Informatique — Projet TI402</p>
+    </div>
+</footer>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

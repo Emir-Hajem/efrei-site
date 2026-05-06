@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formations — Département Informatique EFREI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================================================
+     EN-TÊTE (obligatoire)
+     ================================================ -->
+<header>
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icone">eF</div>
+            <div class="logo-texte">
+                EFREI
+                <small>Département Informatique</small>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="formations.html" class="active">Formations</a></li>
+                <li><a href="equipe.html">Corps Enseignant</a></li>
+                <li><a href="apropos.html">Contact &amp; À propos</a></li>
+            </ul>
+        </nav>
+        <button class="burger" aria-label="Ouvrir le menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+
+<!-- ================================================
+     HERO PAGE
+     ================================================ -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Accueil</a> &rsaquo; Formations
+        </div>
+        <h1>Nos Formations</h1>
+        <p>Du post-bac au cycle ingénieur, une formation d'excellence dans le numérique.</p>
+    </div>
+</section>
+
+
+<!-- ================================================
+     PRÉSENTATION GÉNÉRALE DU CYCLE
+     ================================================ -->
+<section class="section">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Objectifs Pédagogiques</h2>
+            <p>Ce que vous allez maîtriser à l'issue de votre formation</p>
+        </div>
+
+        <div class="grille-3">
+
+            <div class="carte">
+                <div class="carte-icone">🛠️</div>
+                <h3>Expertise Technique</h3>
+                <p>
+                    Maîtrisez les langages et outils utilisés par les professionnels :
+                    Python, Java, JavaScript, SQL, Docker, et bien plus encore.
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">📊</div>
+                <h3>Gestion de Projet</h3>
+                <p>
+                    Apprenez les méthodes agiles (Scrum, Kanban), la conduite de projets
+                    informatiques complexes et le travail en équipe.
+                </p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone">💡</div>
+                <h3>Innovation</h3>
+                <p>
+                    Développez votre créativité et votre sens critique pour concevoir
+                    des solutions numériques adaptées aux défis de demain.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================================
+     PROGRAMMES PAR NIVEAU (onglets JavaScript)
+     ================================================ -->
+<section class="section section-gris">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Programmes par Niveau</h2>
+            <p>Cliquez sur un onglet pour voir le détail du programme</p>
+        </div>
+
+        <!-- Onglets de navigation -->
+        <div class="onglets">
+            <button class="onglet-btn actif" data-onglet="onglet-bachelor">
+                🎓 Bachelors (Bac+3)
+            </button>
+            <button class="onglet-btn" data-onglet="onglet-ingenieur">
+                ⚙️ Cycle Ingénieur (Bac+5)
+            </button>
+        </div>
+
+        <!-- ---- Contenu : Bachelors ---- -->
+        <div id="onglet-bachelor" class="onglet-contenu actif">
+
+            <div class="grille-3">
+
+                <!-- Bachelor Informatique -->
+                <div class="carte">
+                    <div class="carte-icone">💻</div>
+                    <h3>Bachelor Informatique</h3>
+                    <p><strong>Grade de Licence — 3 ans</strong></p>
+                    <p>
+                        <strong>Objectifs :</strong> Former des professionnels polyvalents
+                        maîtrisant le développement logiciel, les bases de données et
+                        l'administration des systèmes.
+                    </p>
+                    <p>
+                        <strong>Matières principales :</strong> Développement Web &amp; Mobile,
+                        Bases de données (SQL), Systèmes &amp; Réseaux, IA &amp; Machine Learning.
+                    </p>
+                    <p><strong>Modalités :</strong> Formation initiale ou alternance.</p>
+                    <p>
+                        <strong>Débouchés :</strong> Développeur Full-Stack,
+                        Administrateur Systèmes, Consultant SI.
+                    </p>
+                </div>
+
+                <!-- Bachelor Cybersécurité -->
+                <div class="carte">
+                    <div class="carte-icone">🔐</div>
+                    <h3>Bachelor Cybersécurité &amp; Réseaux</h3>
+                    <p><strong>Spécialisation Sécurité — 3 ans</strong></p>
+                    <p>
+                        <strong>Objectifs :</strong> Former des spécialistes capables de
+                        protéger les systèmes d'information et de répondre aux cybermenaces.
+                    </p>
+                    <p>
+                        <strong>Matières principales :</strong> Cybersécurité, Cryptographie,
+                        Administration Réseaux, Ethical Hacking, Forensic numérique.
+                    </p>
+                    <p><strong>Modalités :</strong> Formation initiale ou alternance.</p>
+                    <p>
+                        <strong>Débouchés :</strong> Analyste SOC, Pentester,
+                        Administrateur Réseaux, Ingénieur Sécurité.
+                    </p>
+                </div>
+
+                <!-- Bachelor Dev Web & IA -->
+                <div class="carte">
+                    <div class="carte-icone">🌐</div>
+                    <h3>Bachelor Développeur Web &amp; IA</h3>
+                    <p><strong>Web &amp; Intelligence Artificielle — 3 ans</strong></p>
+                    <p>
+                        <strong>Objectifs :</strong> Combiner développement web moderne et
+                        intelligence artificielle pour créer des applications intelligentes.
+                    </p>
+                    <p>
+                        <strong>Matières principales :</strong> Développement Web &amp; Mobile,
+                        IA &amp; Machine Learning, Bases de données, APIs REST.
+                    </p>
+                    <p><strong>Modalités :</strong> Formation initiale ou alternance.</p>
+                    <p>
+                        <strong>Débouchés :</strong> Développeur IA,
+                        Ingénieur ML, Développeur Full-Stack.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ---- Contenu : Cycle Ingénieur ---- -->
+        <div id="onglet-ingenieur" class="onglet-contenu">
+
+            <div class="grille-2">
+
+                <div class="carte">
+                    <div class="carte-icone">🖥️</div>
+                    <h3>Information Technology (Logiciels &amp; SI)</h3>
+                    <p>
+                        Conception et développement de systèmes d'information complexes.
+                        Architecture logicielle, DevOps et Cloud Computing.
+                    </p>
+                    <p><strong>Spécialisations :</strong> Architecture microservices, CI/CD, AWS/Azure.</p>
+                    <p><strong>Stages :</strong> 6 mois minimum en entreprise.</p>
+                    <p><strong>Projets de fin d'études :</strong> en partenariat avec des entreprises.</p>
+                </div>
+
+                <div class="carte">
+                    <div class="carte-icone">📈</div>
+                    <h3>Data Science</h3>
+                    <p>
+                        Traitement et analyse des grandes masses de données.
+                        Machine Learning, Deep Learning et visualisation de données.
+                    </p>
+                    <p><strong>Spécialisations :</strong> Python, TensorFlow, Spark, Power BI.</p>
+                    <p><strong>Stages :</strong> 6 mois minimum en entreprise.</p>
+                    <p><strong>Projets de fin d'études :</strong> en partenariat avec des entreprises.</p>
+                </div>
+
+                <div class="carte">
+                    <div class="carte-icone">🛡️</div>
+                    <h3>Sécurité &amp; Réseaux</h3>
+                    <p>
+                        Expert en cyberdéfense et infrastructure réseau.
+                        Audit de sécurité, SOC et cryptographie avancée.
+                    </p>
+                    <p><strong>Spécialisations :</strong> Ethical Hacking, SIEM, Firewall, SOC.</p>
+                    <p><strong>Stages :</strong> 6 mois minimum en entreprise.</p>
+                    <p><strong>Projets de fin d'études :</strong> en partenariat avec des entreprises.</p>
+                </div>
+
+                <div class="carte">
+                    <div class="carte-icone">🔧</div>
+                    <h3>Systèmes Embarqués</h3>
+                    <p>
+                        Conception de systèmes temps réel, IoT et embarqués.
+                        Programmation bas niveau, électronique et robotique.
+                    </p>
+                    <p><strong>Spécialisations :</strong> C/C++, RTOS, Arduino, Raspberry Pi.</p>
+                    <p><strong>Stages :</strong> 6 mois minimum en entreprise.</p>
+                    <p><strong>Projets de fin d'études :</strong> en partenariat avec des entreprises.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     TABLEAU DES MATIÈRES (obligatoire : tableau)
+     ================================================ -->
+<section class="section">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Programme Détaillé — Bachelor Informatique</h2>
+            <p>Les matières enseignées au fil des 3 années</p>
+        </div>
+
+        <!-- Barre de filtrage (JavaScript) -->
+        <div class="form-groupe" style="max-width: 380px; margin-bottom: 20px;">
+            <label for="filtre-tableau">🔍 Rechercher une matière</label>
+            <input type="text" id="filtre-tableau" placeholder="Ex: Python, Réseaux, IA…">
+        </div>
+
+        <table id="tableau-formations">
+            <thead>
+                <tr>
+                    <th>Année</th>
+                    <th>Matière</th>
+                    <th>Domaine</th>
+                    <th>Crédits ECTS</th>
+                    <th>Mode</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>L1</td>
+                    <td>Algorithmique &amp; Programmation (Python)</td>
+                    <td>Développement</td>
+                    <td>6</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L1</td>
+                    <td>Introduction aux Réseaux</td>
+                    <td>Systèmes &amp; Réseaux</td>
+                    <td>4</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L1</td>
+                    <td>Développement Web (HTML / CSS / JS)</td>
+                    <td>Développement Web</td>
+                    <td>5</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L1</td>
+                    <td>Bases de Données (SQL)</td>
+                    <td>Bases de données</td>
+                    <td>5</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L2</td>
+                    <td>Programmation Orientée Objet (Java)</td>
+                    <td>Développement</td>
+                    <td>6</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L2</td>
+                    <td>Développement Web Mobile</td>
+                    <td>Développement Web</td>
+                    <td>5</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L2</td>
+                    <td>Cybersécurité — Introduction</td>
+                    <td>Cybersécurité</td>
+                    <td>4</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L2</td>
+                    <td>Administration Systèmes Linux</td>
+                    <td>Systèmes &amp; Réseaux</td>
+                    <td>5</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L3</td>
+                    <td>Intelligence Artificielle &amp; Machine Learning</td>
+                    <td>IA &amp; Data</td>
+                    <td>6</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L3</td>
+                    <td>Architecture Cloud (AWS / Azure)</td>
+                    <td>Cloud &amp; DevOps</td>
+                    <td>5</td>
+                    <td>Cours + TP</td>
+                </tr>
+                <tr>
+                    <td>L3</td>
+                    <td>Projet de Fin d'Études</td>
+                    <td>Projet</td>
+                    <td>10</td>
+                    <td>Projet d'équipe</td>
+                </tr>
+                <tr>
+                    <td>L3</td>
+                    <td>Stage Professionnel</td>
+                    <td>Professionnalisation</td>
+                    <td>12</td>
+                    <td>Entreprise</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     PIED DE PAGE (obligatoire)
+     ================================================ -->
+<footer>
+    <div class="footer-grille">
+        <div class="footer-col">
+            <h4>EFREI — Département Informatique</h4>
+            <p>30-32 Avenue de la République<br>94800 Villejuif, France</p>
+            <p>📞 01 46 77 46 77</p>
+            <p>✉ info-dept@efrei.fr</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="equipe.html">Corps Enseignant</a>
+            <a href="apropos.html">Contact &amp; À propos</a>
+        </div>
+        <div class="footer-col">
+            <h4>Liens utiles</h4>
+            <a href="https://www.efrei.fr" target="_blank">Site EFREI</a>
+            <a href="apropos.html#admissions">Admissions</a>
+            <a href="apropos.html#faq">FAQ</a>
+        </div>
+    </div>
+    <div class="footer-nav">
+        <div>
+            <a href="index.html">Accueil</a> |
+            <a href="formations.html">Formations</a> |
+            <a href="equipe.html">Corps Enseignant</a> |
+            <a href="apropos.html"><strong>À propos du projet</strong></a>
+        </div>
+        <div class="accreditations">
+            <span>CGE</span><span>CTI</span><span>EESPIG</span>
+        </div>
+    </div>
+    <div class="footer-bas">
+        <p>&copy; 2026 EFREI Paris — Département Informatique — Projet TI402</p>
+    </div>
+</footer>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

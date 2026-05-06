@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Département Informatique — EFREI Paris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================================================
+     EN-TÊTE (obligatoire sur toutes les pages)
+     ================================================ -->
+<header>
+    <div class="header-inner">
+
+        <!-- Logo EFREI (charte : coin supérieur gauche, blanc sur bleu) -->
+        <a href="index.html" class="logo">
+            <div class="logo-icone">EFREI</div>
+            <div class="logo-texte">
+                EFREI
+                <small>Département Informatique</small>
+            </div>
+        </a>
+
+        <!-- Barre de navigation principale -->
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="equipe.html">Corps Enseignant</a></li>
+                <li><a href="apropos.html">Contact &amp; À propos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Bouton menu burger (affiché sur mobile) -->
+        <button class="burger" aria-label="Ouvrir le menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>
+
+
+<!-- ================================================
+     HERO BANNER (composition en diagonale - charte)
+     ================================================ -->
+<section class="hero">
+
+    <!-- Zone photographique droite (découpe oblique) -->
+    <div class="hero-photo">
+        <img src="images/hero.jpg" alt="Campus EFREI Villejuif">
+    </div>
+
+    <div class="hero-contenu">
+        <div class="hero-texte">
+            <h1>Façonner les ingénieurs et experts du numérique de demain</h1>
+            <p>
+                Le Département Informatique de l'EFREI forme des professionnels
+                du numérique : développement, cybersécurité, data science et IA.
+            </p>
+            <a href="formations.html" class="btn btn-cyan">Découvrir nos formations</a>
+            <a href="apropos.html"    class="btn btn-blanc">Nous contacter</a>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ================================================
+     CHIFFRES CLÉS DU DÉPARTEMENT
+     ================================================ -->
+<section class="section section-bleu">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Le Département en Chiffres</h2>
+            <p>Des résultats qui témoignent de notre excellence</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-nombre" data-cible="94" data-suffixe="%">0%</span>
+                <span class="stat-label">Taux de satisfaction étudiants</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-nombre" data-cible="3200" data-suffixe="+">0+</span>
+                <span class="stat-label">Diplômés dans le numérique</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-nombre" data-cible="150" data-suffixe="+">0+</span>
+                <span class="stat-label">Entreprises partenaires</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-nombre" data-cible="98" data-suffixe="%">0%</span>
+                <span class="stat-label">Insertion professionnelle à 6 mois</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     CARROUSEL — PHOTOS DU CAMPUS DE VILLEJUIF
+     ================================================ -->
+<section class="section section-gris">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>La Vie sur le Campus de Villejuif</h2>
+            <p>Découvrez nos installations, nos étudiants en action et nos événements</p>
+        </div>
+
+        <div class="carrousel">
+            <div class="carrousel-piste">
+
+                <!-- Slide 1 -->
+                <div class="carrousel-slide">
+                    <img src="images/lab.jpg" alt="Labs informatiques du campus">
+                    <div class="carrousel-legende">
+                        <h3>Labs Informatiques de Pointe</h3>
+                        <p>Des équipements modernes disponibles 7j/7 pour vos projets et TP.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carrousel-slide">
+                    <img src="images/student.jpg" alt="Étudiants en plein projet">
+                    <div class="carrousel-legende">
+                        <h3>Étudiants en Pleine Action</h3>
+                        <p>Travail en équipe, projets collaboratifs et hackathons tout au long de l'année.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carrousel-slide">
+                    <img src="images/ctf.png" alt="Cybersécurité et CTF">
+                    <div class="carrousel-legende">
+                        <h3>Cybersécurité &amp; Compétitions CTF</h3>
+                        <p>Participez à des challenges de sécurité dans notre lab dédié.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carrousel-slide">
+                    <img src="images/conference.jpg" alt="Événements et conférences">
+                    <div class="carrousel-legende">
+                        <h3>Événements &amp; Conférences</h3>
+                        <p>Journées Portes Ouvertes, conférences d'experts et ateliers technologiques.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Boutons de navigation -->
+            <button class="carr-btn carr-prev" aria-label="Précédent">&#8592;</button>
+            <button class="carr-btn carr-next" aria-label="Suivant">&#8594;</button>
+        </div>
+
+        <!-- Points de navigation -->
+        <div class="carrousel-points">
+            <button class="point actif" aria-label="Slide 1"></button>
+            <button class="point"       aria-label="Slide 2"></button>
+            <button class="point"       aria-label="Slide 3"></button>
+            <button class="point"       aria-label="Slide 4"></button>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     ACTUALITÉS ET ÉVÉNEMENTS À VENIR
+     ================================================ -->
+<section class="section">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Actualités &amp; Événements à Venir</h2>
+            <p>Ne manquez aucune date importante du département</p>
+        </div>
+
+        <div class="evenement">
+            <div class="evt-date">
+                <span class="jour">14</span>
+                <span class="mois">Juin</span>
+            </div>
+            <div class="evt-info">
+                <h3>Journée Portes Ouvertes — Campus de Villejuif</h3>
+                <p>
+                    Venez découvrir le campus, rencontrer nos enseignants et futurs camarades.
+                    Visites guidées des labs, démos et présentations de tous les programmes.
+                </p>
+                <a href="apropos.html" class="btn btn-cyan">S'inscrire</a>
+            </div>
+        </div>
+
+        <div class="evenement">
+            <div class="evt-date">
+                <span class="jour">21</span>
+                <span class="mois">Juin</span>
+            </div>
+            <div class="evt-info">
+                <h3>Conférence IA &amp; Cybersécurité 2026</h3>
+                <p>
+                    Conférence annuelle réunissant experts, chercheurs et entreprises partenaires
+                    autour des enjeux de l'intelligence artificielle et de la cyberdéfense.
+                </p>
+                <a href="apropos.html" class="btn btn-cyan">En savoir plus</a>
+            </div>
+        </div>
+
+        <div class="evenement">
+            <div class="evt-date">
+                <span class="jour">05</span>
+                <span class="mois">Juil</span>
+            </div>
+            <div class="evt-info">
+                <h3>Atelier Technologique — Développement Web</h3>
+                <p>
+                    Atelier pratique ouvert aux étudiants sur les technologies web modernes :
+                    HTML5, CSS3 avancé et JavaScript.
+                </p>
+                <a href="apropos.html" class="btn btn-cyan">S'inscrire</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     ACCÈS RAPIDES
+     ================================================ -->
+<section class="section section-gris">
+    <div class="container">
+
+        <div class="titre-section">
+            <h2>Accès Rapides</h2>
+            <p>Trouvez rapidement ce que vous cherchez</p>
+        </div>
+
+        <div class="acces-rapides">
+            <a href="formations.html" class="acces-btn">
+                <span class="icone">📚</span>
+                Formations
+            </a>
+            <a href="apropos.html#admissions" class="acces-btn">
+                <span class="icone">📝</span>
+                Admissions
+            </a>
+            <a href="apropos.html" class="acces-btn">
+                <span class="icone">📞</span>
+                Contact
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================================================
+     PIED DE PAGE (obligatoire sur toutes les pages)
+     Doit contenir un lien vers la page "À propos"
+     ================================================ -->
+<footer>
+    <div class="footer-grille">
+
+        <div class="footer-col">
+            <h4>EFREI — Département Informatique</h4>
+            <p>30-32 Avenue de la République<br>94800 Villejuif, France</p>
+            <p>📞 01 46 77 46 77</p>
+            <p>✉ info-dept@efrei.fr</p>
+            <p>Métro Ligne 7 — Villejuif-Léo Lagrange</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="formations.html">Formations</a>
+            <a href="equipe.html">Corps Enseignant</a>
+            <a href="apropos.html">Contact &amp; À propos</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Liens utiles</h4>
+            <a href="https://www.efrei.fr" target="_blank">Site EFREI</a>
+            <a href="apropos.html#admissions">Admissions</a>
+            <a href="apropos.html#faq">FAQ</a>
+            <a href="apropos.html#plan">Plan d'accès</a>
+        </div>
+
+    </div>
+
+    <!-- Navigation du footer (obligatoire — lien vers à propos) -->
+    <div class="footer-nav">
+        <div>
+            <a href="index.html">Accueil</a> |
+            <a href="formations.html">Formations</a> |
+            <a href="equipe.html">Corps Enseignant</a> |
+            <a href="apropos.html"><strong>À propos du projet</strong></a>
+        </div>
+        <!-- Logos accréditations (charte : fond blanc, bas à droite) -->
+        <div class="accreditations">
+            <span>CGE</span>
+            <span>CTI</span>
+            <span>EESPIG</span>
+        </div>
+    </div>
+
+    <div class="footer-bas">
+        <p>&copy; 2026 EFREI Paris — Département Informatique — Projet TI402</p>
+    </div>
+</footer>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
