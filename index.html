@@ -9,12 +9,16 @@
 <body>
 
 <!-- ================================================
-     EN-TÊTE (obligatoire sur toutes les pages)
+     EN-TÊTE
+    Le header est présent sur toutes les pages du site.
+      Il contient le logo EFREI à gauche, et la navigation
+      avec les 4 pages. Sur mobile, la nav disparaît et
+      un bouton burger apparaît à sa place.
      ================================================ -->
 <header>
     <div class="header-inner">
 
-        <!-- Logo EFREI (charte : coin supérieur gauche, blanc sur bleu) -->
+        <!-- Logo : texte "EFREI" + sous-titre "Département Informatique" -->
         <a href="index.html" class="logo">
             <div class="logo-icone">EFREI</div>
             <div class="logo-texte">
@@ -23,7 +27,9 @@
             </div>
         </a>
 
-        <!-- Barre de navigation principale -->
+        <!-- Navigation principale : 4 liens vers les pages du site -->
+        <!-- La classe "active" sur le lien courant est ajoutée en HTML
+             et aussi automatiquement par marquerLienActif() dans script.js -->
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Accueil</a></li>
@@ -32,28 +38,25 @@
                 <li><a href="apropos.html">Contact &amp; À propos</a></li>
             </ul>
         </nav>
-
-        <!-- Bouton menu burger (affiché sur mobile) -->
-        <button class="burger" aria-label="Ouvrir le menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
     </div>
 </header>
 
 
 <!-- ================================================
-     HERO BANNER (composition en diagonale - charte)
+     HERO BANNER
+     C'est la grande bannière d'accueil. On a une photo
+      à droite un étudiant qui code et le texte de
+      présentation du département à gauche avec deux
+      boutons d'action.
      ================================================ -->
 <section class="hero">
 
-    <!-- Zone photographique droite (découpe oblique) -->
+    <!-- Photo placée à droite grâce au CSS (position absolute + clip oblique) -->
     <div class="hero-photo">
-        <img src="images/hero.jpg" alt="Campus EFREI Villejuif">
+        <img src="images/hero.jpg" alt="Etudiant en train de coder">
     </div>
 
+    <!-- Texte + boutons placés à gauche -->
     <div class="hero-contenu">
         <div class="hero-texte">
             <h1>Façonner les ingénieurs et experts du numérique de demain</h1>
@@ -61,6 +64,7 @@
                 Le Département Informatique de l'EFREI forme des professionnels
                 du numérique : développement, cybersécurité, data science et IA.
             </p>
+            <!-- Deux boutons : couleurs différentes selon la charte EFREI -->
             <a href="formations.html" class="btn btn-cyan">Découvrir nos formations</a>
             <a href="apropos.html"    class="btn btn-blanc">Nous contacter</a>
         </div>
@@ -70,7 +74,14 @@
 
 
 <!-- ================================================
-     CHIFFRES CLÉS DU DÉPARTEMENT
+     CHIFFRES CLÉS
+    Ces 4 chiffres s'animent au chargement de la page :
+      ils partent de 0 et montent jusqu'à leur valeur finale.
+      On utilise data-cible pour stocker le nombre cible
+      et data-suffixe pour le symbole (% ou +).
+      La fonction animerCompteurs() dans script.js lit ces
+      attributs et utilise un setInterval toutes les 25ms
+      pour incrémenter progressivement.
      ================================================ -->
 <section class="section section-bleu">
     <div class="container">
@@ -81,6 +92,7 @@
         </div>
 
         <div class="stats">
+            <!-- data-cible = valeur finale | data-suffixe = symbole affiché après -->
             <div class="stat-item">
                 <span class="stat-nombre" data-cible="94" data-suffixe="%">0%</span>
                 <span class="stat-label">Taux de satisfaction étudiants</span>
@@ -104,7 +116,16 @@
 
 
 <!-- ================================================
-     CARROUSEL — PHOTOS DU CAMPUS DE VILLEJUIF
+     CARROUSEL ← ÉLÉMENT OBLIGATOIRE
+    C'est le carrousel — un des éléments obligatoires
+      du projet. On a 4 slides avec des photos du campus.
+      La navigation se fait avec les flèches gauche/droite,
+      les points en bas, et il défile aussi automatiquement
+      toutes les 4 secondes.
+      Toutes les slides sont côte à côte
+      et onn déplace ces images avec un translateX en CSS.
+      Par exemple pour aller au slide 3 on fait translateX(-200%).
+      Tout ça est géré par initCarrousel() dans script.js.
      ================================================ -->
 <section class="section section-gris">
     <div class="container">
@@ -115,9 +136,11 @@
         </div>
 
         <div class="carrousel">
+
+            <!-- La piste contient toutes les slides alignées horizontalement.
+                 On la déplace avec style.transform = 'translateX(-N * 100%)' -->
             <div class="carrousel-piste">
 
-                <!-- Slide 1 -->
                 <div class="carrousel-slide">
                     <img src="images/lab.jpg" alt="Labs informatiques du campus">
                     <div class="carrousel-legende">
@@ -126,7 +149,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
                 <div class="carrousel-slide">
                     <img src="images/student.jpg" alt="Étudiants en plein projet">
                     <div class="carrousel-legende">
@@ -135,7 +157,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
                 <div class="carrousel-slide">
                     <img src="images/ctf.png" alt="Cybersécurité et CTF">
                     <div class="carrousel-legende">
@@ -144,7 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
                 <div class="carrousel-slide">
                     <img src="images/conference.jpg" alt="Événements et conférences">
                     <div class="carrousel-legende">
@@ -155,12 +175,13 @@
 
             </div>
 
-            <!-- Boutons de navigation -->
+            <!-- Flèches de navigation gauche/droite -->
             <button class="carr-btn carr-prev" aria-label="Précédent">&#8592;</button>
             <button class="carr-btn carr-next" aria-label="Suivant">&#8594;</button>
         </div>
 
-        <!-- Points de navigation -->
+        <!-- Points cliquables en bas du carrousel.
+             La classe "actif" se déplace sur le point correspondant au slide courant -->
         <div class="carrousel-points">
             <button class="point actif" aria-label="Slide 1"></button>
             <button class="point"       aria-label="Slide 2"></button>
@@ -173,7 +194,10 @@
 
 
 <!-- ================================================
-     ACTUALITÉS ET ÉVÉNEMENTS À VENIR
+     ÉVÉNEMENTS À VENIR
+     Une section avec 3 événements à venir du département.
+      Chaque événement affiche la date bien visible à gauche
+      et le titre + description à droite avec un bouton d'action.
      ================================================ -->
 <section class="section">
     <div class="container">
@@ -183,6 +207,7 @@
             <p>Ne manquez aucune date importante du département</p>
         </div>
 
+        <!-- Structure de chaque événement : date à gauche + infos à droite -->
         <div class="evenement">
             <div class="evt-date">
                 <span class="jour">14</span>
@@ -234,6 +259,10 @@
 
 <!-- ================================================
      ACCÈS RAPIDES
+    3 boutons de raccourci vers les sections les plus
+      importantes du site : Formations, Admissions, Contact.
+      C'est pour aider l'utilisateur à naviguer rapidement
+      sans avoir à chercher dans le menu.
      ================================================ -->
 <section class="section section-gris">
     <div class="container">
@@ -248,6 +277,7 @@
                 <span class="icone">📚</span>
                 Formations
             </a>
+            <!-- Lien vers une ancre précise dans apropos.html -->
             <a href="apropos.html#admissions" class="acces-btn">
                 <span class="icone">📝</span>
                 Admissions
@@ -263,8 +293,13 @@
 
 
 <!-- ================================================
-     PIED DE PAGE (obligatoire sur toutes les pages)
-     Doit contenir un lien vers la page "À propos"
+     PIED DE PAGE
+    Le footer est aussi commun à toutes les pages.
+      Il a 3 colonnes : les coordonnées du département,
+      les liens de navigation, et des liens utiles.
+      En bas on a la barre de navigation obligatoire avec
+      le lien vers la page À propos, et les logos
+      d'accréditation CTI, CGE et EESPIG.
      ================================================ -->
 <footer>
     <div class="footer-grille">
@@ -295,7 +330,8 @@
 
     </div>
 
-    <!-- Navigation du footer (obligatoire — lien vers à propos) -->
+    <!-- Barre de navigation du footer — obligatoire selon l'énoncé.
+         Doit contenir un lien vers la page "À propos du projet" -->
     <div class="footer-nav">
         <div>
             <a href="index.html">Accueil</a> |
@@ -303,7 +339,8 @@
             <a href="equipe.html">Corps Enseignant</a> |
             <a href="apropos.html"><strong>À propos du projet</strong></a>
         </div>
-        <!-- Logos accréditations (charte : fond blanc, bas à droite) -->
+        <!-- Logos accréditations : CTI (accréditation ingénieur),
+             CGE (Conférence des Grandes Écoles), EESPIG (statut privé d'intérêt général) -->
         <div class="accreditations">
             <span>CGE</span>
             <span>CTI</span>
@@ -316,7 +353,6 @@
     </div>
 </footer>
 
-<div id="toast"></div>
 <script src="script.js"></script>
 </body>
 </html>
