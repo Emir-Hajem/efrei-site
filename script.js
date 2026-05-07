@@ -4,28 +4,7 @@
    ============================================ */
 
 /* ============================
-   1. MENU BURGER (mobile)
-   ============================ */
-function initMenuBurger() {
-    var burger = document.querySelector('.burger');
-    var nav    = document.querySelector('nav');
-
-    if (!burger || !nav) return;
-
-    burger.addEventListener('click', function () {
-        nav.classList.toggle('ouvert');
-    });
-
-    // Fermer si on clique ailleurs
-    document.addEventListener('click', function (e) {
-        if (!burger.contains(e.target) && !nav.contains(e.target)) {
-            nav.classList.remove('ouvert');
-        }
-    });
-}
-
-/* ============================
-   2. CARROUSEL
+   1. CARROUSEL (gere slide et defilements auto)
    ============================ */
 function initCarrousel() {
     var piste  = document.querySelector('.carrousel-piste');
@@ -61,7 +40,7 @@ function initCarrousel() {
 }
 
 /* ============================
-   3. ONGLETS (formations)
+   2. ONGLETS (formations) affiche et cache contenus d'onglet
    ============================ */
 function initOnglets() {
     var boutons   = document.querySelectorAll('.onglet-btn');
@@ -82,7 +61,7 @@ function initOnglets() {
 }
 
 /* ============================
-   4. FAQ ACCORDÉON
+   3. FAQ ACCORDÉON ouverture fermeture
    ============================ */
 function initFAQ() {
     var questions = document.querySelectorAll('.faq-question');
@@ -109,7 +88,7 @@ function initFAQ() {
 }
 
 /* ============================
-   5. VALIDATION FORMULAIRE
+   4. VALIDATION FORMULAIRE valide et affiche erreurs
    ============================ */
 function initFormulaire() {
     var form = document.getElementById('formulaire-contact');
@@ -170,10 +149,10 @@ function afficherErreur(champ, texte) {
         msg.textContent = texte;
         msg.style.display = 'block';
     }
-}
+} /*affiche CHAMPS rouge en cas d'erreur*/
 
 /* ============================
-   6. TOAST NOTIFICATION
+   5. TOAST NOTIFICATION TEMPORAIRE en bas
    ============================ */
 function afficherToast(texte) {
     var toast = document.getElementById('toast');
@@ -184,7 +163,7 @@ function afficherToast(texte) {
 }
 
 /* ============================
-   7. ANIMATION COMPTEURS
+   6. ANIMATION COMPTEURS incremente les chiffres clés
    ============================ */
 function animerCompteurs() {
     var compteurs = document.querySelectorAll('.stat-nombre');
@@ -208,46 +187,7 @@ function animerCompteurs() {
 }
 
 /* ============================
-   8. ANIMATION AU SCROLL
-   ============================ */
-function initAnimationScroll() {
-    var elements = document.querySelectorAll('.carte, .prof-carte, .evenement');
-
-    elements.forEach(function (el) {
-        el.style.opacity    = '0';
-        el.style.transform  = 'translateY(25px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-
-    function verifier() {
-        elements.forEach(function (el) {
-            var rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 60) {
-                el.style.opacity   = '1';
-                el.style.transform = 'translateY(0)';
-            }
-        });
-    }
-
-    window.addEventListener('scroll', verifier);
-    verifier();
-}
-
-/* ============================
-   9. LIEN ACTIF dans la nav
-   ============================ */
-function marquerLienActif() {
-    var page  = window.location.pathname.split('/').pop() || 'index.html';
-    var liens = document.querySelectorAll('nav ul li a');
-    liens.forEach(function (lien) {
-        if (lien.getAttribute('href') === page) {
-            lien.classList.add('active');
-        }
-    });
-}
-
-/* ============================
-   10. FILTRE TABLEAU
+   7. FILTRE TABLEAU filtre les lignes du tableau en temps reel
    ============================ */
 function initFiltreTableau() {
     var input  = document.getElementById('filtre-tableau');
@@ -267,13 +207,10 @@ function initFiltreTableau() {
    INITIALISATION
    ============================ */
 document.addEventListener('DOMContentLoaded', function () {
-    initMenuBurger();
     initCarrousel();
     initOnglets();
     initFAQ();
     initFormulaire();
-    initAnimationScroll();
-    marquerLienActif();
     initFiltreTableau();
 
     // Compteurs uniquement sur la page d'accueil
