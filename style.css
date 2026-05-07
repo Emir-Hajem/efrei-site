@@ -3,21 +3,41 @@
    Feuille de style principale (style.css)
    ============================================ */
 
-/* Import des polices (charte graphique EFREI) */
+/* ============================================
+   POLICES
+   "On importe deux polices depuis Google Fonts :
+    Montserrat pour les titres et boutons,
+    Open Sans pour le texte courant.
+    C'est la charte graphique officielle de l'EFREI."
+   ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@300;400&display=swap');
 
-/* ---- Variables couleurs (charte graphique) ---- */
+/* ============================================
+   VARIABLES CSS (couleurs de la charte EFREI)
+   "On déclare toutes les couleurs comme des variables
+    CSS dans :root. Comme ça si on veut changer une
+    couleur, on le fait à un seul endroit.
+    --bleu : #0A316C — couleur principale
+    --cyan : #81ECEC — accents et boutons
+    --jaune: #FDCB6E — call-to-action"
+   ============================================ */
 :root {
-    --bleu:   #0A316C;   /* Bleu Académique - fond principal */
-    --blanc:  #FFFFFF;   /* Blanc Pur */
-    --cyan:   #81ECEC;   /* Cyan Technologique - accents */
-    --jaune:  #FDCB6E;   /* Jaune Électrique - call-to-action */
+    --bleu:      #0A316C;   /* Bleu Académique - fond principal */
+    --blanc:     #FFFFFF;   /* Blanc Pur */
+    --cyan:      #81ECEC;   /* Cyan Technologique - accents */
+    --jaune:     #FDCB6E;   /* Jaune Électrique - call-to-action */
     --gris-fond: #f4f6f9;
-    --gris-texte: #333333;
-    --bleu-clair: #1a4a8a;
+    --gris-texte:#333333;
+    --bleu-clair:#1a4a8a;
 }
 
-/* ---- Reset de base ---- */
+/* ============================================
+   RESET DE BASE
+   "Le reset supprime les marges et paddings par
+    défaut du navigateur pour partir d'une base
+    propre. box-sizing: border-box fait que le
+    padding est inclus dans la largeur de l'élément."
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -32,13 +52,13 @@ body {
     background-color: var(--blanc);
 }
 
-/* ---- Titres (charte : Montserrat) ---- */
+/* Titres : Montserrat selon la charte EFREI */
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--blanc);
+    color: var(--blanc); /* blanc car toujours sur fond bleu */
 }
 
 h2 {
@@ -70,7 +90,13 @@ a {
 }
 
 /* ============================================
-   EN-TÊTE (obligatoire sur toutes les pages)
+   EN-TÊTE — obligatoire sur toutes les pages
+   "Le header a position: sticky donc il reste
+    collé en haut quand on scroll. z-index: 1000
+    pour qu'il passe au-dessus de tout le reste.
+    Le lien actif prend un fond cyan avec
+    la couleur bleue — c'est géré par la classe
+    'active' qu'on met en dur dans le HTML."
    ============================================ */
 header {
     background-color: var(--bleu);
@@ -90,13 +116,13 @@ header {
     height: 70px;
 }
 
-/* Logo (charte : coin supérieur gauche, blanc sur bleu) */
+/* Logo : carré blanc avec texte bleu à l'intérieur */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    padding: 8px; /* zone de protection autour du logo */
+    padding: 8px;
 }
 
 .logo-icone {
@@ -121,6 +147,7 @@ header {
     line-height: 1.1;
 }
 
+/* Sous-titre du logo en cyan */
 .logo-texte small {
     display: block;
     font-size: 11px;
@@ -130,7 +157,7 @@ header {
     letter-spacing: 1px;
 }
 
-/* Navigation */
+/* Liens de navigation : hover et active = fond cyan */
 nav ul {
     list-style: none;
     display: flex;
@@ -156,7 +183,7 @@ nav ul li a.active {
     color: var(--bleu);
 }
 
-/* Menu burger (mobile) */
+/* Burger mobile : caché par défaut sur desktop */
 .burger {
     display: none;
     flex-direction: column;
@@ -177,7 +204,12 @@ nav ul li a.active {
 }
 
 /* ============================================
-   PIED DE PAGE (obligatoire sur toutes les pages)
+   PIED DE PAGE — obligatoire sur toutes les pages
+   "Le footer a une grille CSS à 3 colonnes :
+    2fr pour les coordonnées, 1fr 1fr pour les
+    liens. En bas la barre obligatoire contient
+    le lien vers À propos et les logos
+    d'accréditation sur fond blanc."
    ============================================ */
 footer {
     background-color: var(--bleu);
@@ -186,6 +218,7 @@ footer {
     margin-top: 60px;
 }
 
+/* Grille 3 colonnes : 2fr 1fr 1fr */
 .footer-grille {
     max-width: 1200px;
     margin: 0 auto;
@@ -216,11 +249,9 @@ footer {
     transition: color 0.3s;
 }
 
-.footer-col a:hover {
-    color: var(--cyan);
-}
+.footer-col a:hover { color: var(--cyan); }
 
-/* Barre de navigation du footer (obligatoire - lien vers à propos) */
+/* Barre footer obligatoire — lien vers À propos */
 .footer-nav {
     max-width: 1200px;
     margin: 18px auto 0;
@@ -238,11 +269,9 @@ footer {
     transition: color 0.3s;
 }
 
-.footer-nav a:hover {
-    color: var(--cyan);
-}
+.footer-nav a:hover { color: var(--cyan); }
 
-/* Logos accréditations (charte : fond blanc en bas à droite) */
+/* Logos accréditations : fond blanc en bas à droite */
 .accreditations {
     background-color: var(--blanc);
     padding: 5px 12px;
@@ -269,7 +298,13 @@ footer {
 }
 
 /* ============================================
-   HERO BANNER (diagonale - charte graphique)
+   HERO BANNER — page d'accueil
+   "La photo est placée en position: absolute à
+    droite, avec un clip-path polygon qui crée la
+    découpe oblique. Les 4 points du polygone
+    définissent la forme en diagonale.
+    Le texte est en z-index: 2 pour passer
+    au-dessus de la photo."
    ============================================ */
 .hero {
     background-color: var(--bleu);
@@ -280,7 +315,7 @@ footer {
     align-items: center;
 }
 
-/* Zone photographique à droite (découpe oblique) */
+/* clip-path crée la découpe oblique à gauche de la photo */
 .hero-photo {
     position: absolute;
     right: 0;
@@ -304,11 +339,10 @@ footer {
     margin: 0 auto;
     padding: 60px 40px;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* passe au-dessus de la photo */
     width: 100%;
 }
 
-/* Texte aligné à gauche (charte) */
 .hero-texte {
     max-width: 520px;
     text-align: left;
@@ -320,7 +354,7 @@ footer {
     margin: 18px 0 28px;
 }
 
-/* Hero des pages intérieures */
+/* Hero des pages intérieures (formations, equipe, apropos) */
 .page-hero {
     background-color: var(--bleu);
     padding: 55px 40px;
@@ -328,6 +362,7 @@ footer {
     overflow: hidden;
 }
 
+/* Décoration oblique à droite via pseudo-élément ::after */
 .page-hero::after {
     content: '';
     position: absolute;
@@ -346,7 +381,7 @@ footer {
 .page-hero h1 { font-size: 34px; margin-bottom: 10px; }
 .page-hero p  { color: rgba(255,255,255,0.8); font-size: 17px; max-width: 600px; margin: 0; }
 
-/* Fil d'Ariane */
+/* Fil d'Ariane : Accueil > Page courante */
 .breadcrumb {
     font-size: 13px;
     color: rgba(255,255,255,0.55);
@@ -356,6 +391,11 @@ footer {
 
 /* ============================================
    BOUTONS
+   "On a 3 variantes de boutons : btn-cyan (fond
+    cyan), btn-blanc (contour blanc transparent),
+    btn-jaune (fond jaune). Au survol le fond
+    disparaît et la couleur du texte prend la
+    couleur du contour — effet inversé."
    ============================================ */
 .btn {
     display: inline-block;
@@ -372,6 +412,7 @@ footer {
     transition: all 0.3s;
 }
 
+/* Cyan : fond cyan → au hover fond transparent + texte cyan */
 .btn-cyan {
     background-color: var(--cyan);
     color: var(--bleu);
@@ -382,6 +423,7 @@ footer {
     color: var(--cyan);
 }
 
+/* Blanc : contour blanc → au hover fond blanc + texte bleu */
 .btn-blanc {
     background-color: transparent;
     color: var(--blanc);
@@ -405,18 +447,16 @@ footer {
 
 /* ============================================
    SECTIONS & CONTENEUR
+   "Toutes les sections utilisent la classe
+    .section pour un padding uniforme.
+    .section-gris et .section-bleu changent
+    juste la couleur de fond.
+    .container limite la largeur à 1200px
+    et centre le contenu."
    ============================================ */
-.section {
-    padding: 65px 40px;
-}
-
-.section-gris {
-    background-color: var(--gris-fond);
-}
-
-.section-bleu {
-    background-color: var(--bleu);
-}
+.section { padding: 65px 40px; }
+.section-gris { background-color: var(--gris-fond); }
+.section-bleu { background-color: var(--bleu); }
 
 .section-bleu h2,
 .section-bleu h3 { color: var(--blanc); }
@@ -428,7 +468,8 @@ footer {
     margin: 0 auto;
 }
 
-/* Titre de section centré avec ligne décorative */
+/* Titre de section : centré avec une ligne cyan en dessous
+   via le pseudo-élément ::after */
 .titre-section {
     text-align: center;
     margin-bottom: 45px;
@@ -454,7 +495,12 @@ footer {
 .section-bleu .titre-section p { color: rgba(255,255,255,0.7); }
 
 /* ============================================
-   GRILLES
+   GRILLES CSS
+   "On utilise CSS Grid pour les mises en page.
+    .grille-3 = 3 colonnes égales,
+    .grille-2 = 2 colonnes égales.
+    Les media queries en bas du fichier les
+    font passer en 1 colonne sur mobile."
    ============================================ */
 .grille-3 {
     display: grid;
@@ -470,6 +516,10 @@ footer {
 
 /* ============================================
    CARTES
+   "Les cartes ont un léger translateY(-5px)
+    au survol pour donner l'impression qu'elles
+    se soulèvent. L'ombre devient plus grande
+    en même temps pour renforcer l'effet."
    ============================================ */
 .carte {
     background-color: var(--blanc);
@@ -484,13 +534,15 @@ footer {
     box-shadow: 0 8px 28px rgba(10,49,108,0.13);
 }
 
-.carte-icone {
-    font-size: 34px;
-    margin-bottom: 14px;
-}
+.carte-icone { font-size: 34px; margin-bottom: 14px; }
 
 /* ============================================
    CHIFFRES CLÉS
+   "Grille de 4 colonnes. Les chiffres sont en
+    cyan sur fond bleu — stat-nombre en 46px.
+    La valeur de départ dans le HTML est '0%',
+    et animerCompteurs() dans le JS remplace
+    ce texte progressivement au chargement."
    ============================================ */
 .stats {
     display: grid;
@@ -517,21 +569,29 @@ footer {
 }
 
 /* ============================================
-   CARROUSEL
+   CARROUSEL ← ÉLÉMENT OBLIGATOIRE
+   "La piste a display: flex — les slides sont
+    donc alignées côte à côte horizontalement.
+    transition: transform 0.5s ease donne
+    l'animation fluide quand le JS change
+    le translateX. Le conteneur a overflow:hidden
+    pour cacher les slides non actives."
    ============================================ */
 .carrousel {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* cache les slides hors cadre */
     border-radius: 8px;
     max-width: 900px;
     margin: 0 auto;
 }
 
+/* display: flex aligne toutes les slides côte à côte */
 .carrousel-piste {
     display: flex;
     transition: transform 0.5s ease;
 }
 
+/* min-width: 100% = chaque slide prend toute la largeur */
 .carrousel-slide {
     min-width: 100%;
     height: 340px;
@@ -546,7 +606,7 @@ footer {
     object-fit: cover;
 }
 
-/* Légende sur la photo */
+/* Légende : dégradé du bas vers le haut sur la photo */
 .carrousel-legende {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -567,7 +627,7 @@ footer {
     margin: 0;
 }
 
-/* Boutons précédent / suivant */
+/* Flèches précédent / suivant en position absolute */
 .carr-btn {
     position: absolute;
     top: 50%;
@@ -593,7 +653,7 @@ footer {
 .carr-prev { left: 14px; }
 .carr-next { right: 14px; }
 
-/* Points de navigation */
+/* Points de navigation : ronds gris, actif = bleu */
 .carrousel-points {
     display: flex;
     justify-content: center;
@@ -611,9 +671,7 @@ footer {
     transition: background-color 0.3s;
 }
 
-.point.actif {
-    background-color: var(--bleu);
-}
+.point.actif { background-color: var(--bleu); }
 
 /* ============================================
    ÉVÉNEMENTS
@@ -625,7 +683,7 @@ footer {
     padding: 20px;
     background: var(--blanc);
     border-radius: 8px;
-    border-left: 4px solid var(--cyan);
+    border-left: 4px solid var(--cyan); /* trait cyan à gauche */
     margin-bottom: 14px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
@@ -644,8 +702,8 @@ footer {
 .evt-date .jour  { font-size: 22px; display: block; }
 .evt-date .mois  { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--cyan); }
 
-.evt-info h3     { margin-bottom: 6px; }
-.evt-info p      { margin: 0 0 10px; font-size: 15px; }
+.evt-info h3 { margin-bottom: 6px; }
+.evt-info p  { margin: 0 0 10px; font-size: 15px; }
 
 /* ============================================
    ACCÈS RAPIDES
@@ -676,6 +734,7 @@ footer {
     text-align: center;
 }
 
+/* Au hover : fond bleu + texte blanc + léger soulèvement */
 .acces-btn:hover {
     background-color: var(--bleu);
     color: var(--blanc);
@@ -685,7 +744,12 @@ footer {
 .acces-btn .icone { font-size: 34px; }
 
 /* ============================================
-   ONGLETS (formations)
+   ONGLETS ← ÉLÉMENT OBLIGATOIRE (formations)
+   "Les onglets sont des boutons CSS avec une
+    bordure inférieure bleue sur l'actif.
+    .onglet-contenu a display: none par défaut,
+    et display: block quand la classe 'actif'
+    est ajoutée par initOnglets() dans le JS."
    ============================================ */
 .onglets {
     display: flex;
@@ -712,16 +776,23 @@ footer {
 
 .onglet-btn:hover { color: var(--bleu); }
 
+/* Onglet actif : bordure bleue en bas */
 .onglet-btn.actif {
     color: var(--bleu);
     border-bottom-color: var(--bleu);
 }
 
+/* Contenu caché par défaut, visible si classe "actif" */
 .onglet-contenu { display: none; }
 .onglet-contenu.actif { display: block; }
 
 /* ============================================
-   TABLEAUX (obligatoire)
+   TABLEAUX ← ÉLÉMENT OBLIGATOIRE
+   "border-collapse: collapse supprime les
+    doubles bordures entre cellules.
+    Les lignes paires ont un fond légèrement
+    bleuté pour la lisibilité. Au survol d'une
+    ligne, le fond passe en bleu clair."
    ============================================ */
 table {
     width: 100%;
@@ -752,15 +823,13 @@ tbody tr {
 
 tbody tr:hover { background-color: #f0f4ff; }
 
-tbody td {
-    padding: 13px 16px;
-    font-size: 14px;
-}
+tbody td { padding: 13px 16px; font-size: 14px; }
 
+/* Lignes paires légèrement colorées */
 tbody tr:nth-child(even) { background-color: #f8faff; }
 
 /* ============================================
-   ENSEIGNANTS
+   ENSEIGNANTS (style de base dans style.css)
    ============================================ */
 .prof-carte {
     background: var(--blanc);
@@ -781,7 +850,6 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     background-color: var(--bleu-clair);
 }
 
-/* Placeholder si pas d'image */
 .prof-photo-placeholder {
     width: 100%;
     height: 200px;
@@ -793,10 +861,7 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     color: var(--blanc);
 }
 
-.prof-info {
-    padding: 20px;
-}
-
+.prof-info { padding: 20px; }
 .prof-info h3 { font-size: 17px; margin-bottom: 4px; }
 
 .prof-titre {
@@ -805,9 +870,7 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: var(--cyan);
-    /* cyan sur blanc n'est pas assez lisible — on force une couleur sombre */
-    color: #0a7a7a;
+    color: #0a7a7a; /* cyan foncé pour lisibilité sur blanc */
     margin-bottom: 10px;
 }
 
@@ -819,11 +882,16 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
 }
 
 /* ============================================
-   FORMULAIRE (obligatoire)
+   FORMULAIRE ← ÉLÉMENT OBLIGATOIRE
+   "Au focus sur un champ, la bordure passe de
+    gris à bleu — c'est le retour visuel pour
+    l'utilisateur. Si le JS détecte une erreur,
+    il ajoute la classe 'erreur' qui passe la
+    bordure en rouge. Le message d'erreur sous
+    le champ a display: none par défaut et est
+    affiché par le JS."
    ============================================ */
-.form-groupe {
-    margin-bottom: 18px;
-}
+.form-groupe { margin-bottom: 18px; }
 
 .form-groupe label {
     display: block;
@@ -849,6 +917,7 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     transition: border-color 0.3s;
 }
 
+/* Focus : bordure bleue */
 .form-groupe input:focus,
 .form-groupe select:focus,
 .form-groupe textarea:focus {
@@ -856,11 +925,13 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     border-color: var(--bleu);
 }
 
+/* Erreur : bordure rouge, ajoutée par le JS */
 .form-groupe input.erreur,
 .form-groupe textarea.erreur {
     border-color: #e74c3c;
 }
 
+/* Message d'erreur : caché par défaut, affiché par le JS */
 .msg-erreur {
     color: #e74c3c;
     font-size: 12px;
@@ -868,6 +939,7 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     display: none;
 }
 
+/* Message de succès : caché par défaut, affiché par le JS */
 .msg-succes {
     background-color: #d4edda;
     color: #155724;
@@ -879,7 +951,13 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
 }
 
 /* ============================================
-   FAQ ACCORDÉON
+   FAQ ACCORDÉON ← ÉLÉMENT OBLIGATOIRE
+   "L'animation de la FAQ est entièrement en CSS.
+    La réponse a max-height: 0 par défaut —
+    donc invisible. Quand le JS ajoute la classe
+    'ouvert', max-height passe à 250px et le CSS
+    anime la transition. L'icône + tourne de 45°
+    pour faire une croix quand c'est ouvert."
    ============================================ */
 .faq-item {
     border: 1px solid #ddd;
@@ -907,6 +985,7 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
 
 .faq-question:hover { background-color: #f0f4ff; }
 
+/* Question ouverte : fond bleu + texte blanc */
 .faq-question.ouvert {
     background-color: var(--bleu);
     color: var(--blanc);
@@ -918,8 +997,10 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     transition: transform 0.3s;
 }
 
+/* Icône tourne de 45° = transforme "+" en "×" */
 .faq-question.ouvert .faq-icone { transform: rotate(45deg); }
 
+/* Réponse cachée par défaut : max-height: 0 */
 .faq-reponse {
     max-height: 0;
     overflow: hidden;
@@ -930,13 +1011,14 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
     color: #444;
 }
 
+/* Réponse ouverte : max-height: 250px → animation fluide */
 .faq-reponse.ouvert {
     max-height: 250px;
     padding: 14px 20px 18px;
 }
 
 /* ============================================
-   TOAST (notification JavaScript)
+   TOAST (inutilisé mais gardé dans le CSS)
    ============================================ */
 #toast {
     position: fixed;
@@ -964,16 +1046,21 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
 }
 
 /* ============================================
-   RESPONSIVE (media queries)
+   RESPONSIVE — media queries
+   "En bas du fichier on a 3 breakpoints :
+    1024px : grilles passent de 3 à 2 colonnes.
+    768px  : tout passe en 1 colonne, la photo
+    du hero est cachée, le menu devient burger.
+    480px  : ajustements finaux pour petits écrans."
    ============================================ */
 @media (max-width: 1024px) {
-    .grille-3   { grid-template-columns: repeat(2, 1fr); }
-    .stats      { grid-template-columns: repeat(2, 1fr); }
+    .grille-3      { grid-template-columns: repeat(2, 1fr); }
+    .stats         { grid-template-columns: repeat(2, 1fr); }
     .acces-rapides { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-    /* Menu mobile */
+    /* Menu mobile : caché par défaut, visible si classe "ouvert" */
     nav {
         display: none;
         position: absolute;
@@ -986,40 +1073,29 @@ tbody tr:nth-child(even) { background-color: #f8faff; }
 
     nav.ouvert { display: block; }
 
-    nav ul {
-        flex-direction: column;
-        gap: 4px;
-    }
-
+    nav ul { flex-direction: column; gap: 4px; }
     nav ul li a { display: block; padding: 12px 14px; }
 
-    .burger { display: flex; }
-
+    .burger { display: flex; } /* burger visible sur mobile */
     header { position: relative; }
 
-    /* Typographie */
     h1 { font-size: 26px; }
     h2 { font-size: 22px; }
 
-    /* Hero */
     .hero { min-height: auto; }
     .hero-contenu { padding: 40px 20px; }
-    .hero-photo { display: none; }
+    .hero-photo { display: none; } /* photo cachée sur mobile */
 
-    /* Sections */
-    .section      { padding: 45px 20px; }
-    .page-hero    { padding: 38px 20px; }
+    .section   { padding: 45px 20px; }
+    .page-hero { padding: 38px 20px; }
 
-    /* Grilles */
     .grille-3, .grille-2 { grid-template-columns: 1fr; }
     .stats               { grid-template-columns: repeat(2, 1fr); }
     .acces-rapides       { grid-template-columns: 1fr; }
 
-    /* Footer */
-    .footer-grille  { grid-template-columns: 1fr; gap: 20px; }
-    .footer-nav     { flex-direction: column; align-items: flex-start; }
+    .footer-grille { grid-template-columns: 1fr; gap: 20px; }
+    .footer-nav    { flex-direction: column; align-items: flex-start; }
 
-    /* Bouton secondaire passe en dessous */
     .btn-blanc { margin-left: 0; margin-top: 10px; display: inline-block; }
 }
 
