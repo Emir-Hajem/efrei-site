@@ -137,7 +137,6 @@ function initFormulaire() {
             var succes = document.querySelector('.msg-succes');
             if (succes) succes.style.display = 'block';
             form.reset();
-            afficherToast('✅ Message envoyé avec succès !');
         }
     });
 }
@@ -152,18 +151,7 @@ function afficherErreur(champ, texte) {
 } /*affiche CHAMPS rouge en cas d'erreur*/
 
 /* ============================
-   5. TOAST NOTIFICATION TEMPORAIRE en bas
-   ============================ */
-function afficherToast(texte) {
-    var toast = document.getElementById('toast');
-    if (!toast) return;
-    toast.textContent = texte;
-    toast.classList.add('visible');
-    setTimeout(function () { toast.classList.remove('visible'); }, 3000);
-}
-
-/* ============================
-   6. ANIMATION COMPTEURS incremente les chiffres clés
+   5. ANIMATION COMPTEURS incremente les chiffres clés
    ============================ */
 function animerCompteurs() {
     var compteurs = document.querySelectorAll('.stat-nombre');
@@ -187,7 +175,7 @@ function animerCompteurs() {
 }
 
 /* ============================
-   7. FILTRE TABLEAU filtre les lignes du tableau en temps reel
+   6. FILTRE TABLEAU filtre les lignes du tableau en temps reel
    ============================ */
 function initFiltreTableau() {
     var input  = document.getElementById('filtre-tableau');
