@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* ---- Carte prof avec effet hover ---- */
+        /* ============================================
+           CSS spécifique à cette page uniquement.
+           Placé ici et non dans style.css car il ne
+           sert que pour les cartes enseignants.
+           ============================================ */
+
+        /* Carte prof : position relative pour pouvoir
+           placer le bandeau et l'overlay en absolu dessus */
         .prof-carte {
             position: relative;
             border-radius: 8px;
@@ -16,14 +23,14 @@
             cursor: pointer;
         }
 
-        /* L'image prend toute la carte, non rognée */
+        /* object-fit: contain = image entière sans rognage */
         .prof-photo {
             width: 100%;
             height: 380px;
-            object-fit: contain;       /* image entière, pas de rognage */
+            object-fit: contain;
             object-position: center;
             display: block;
-            background-color: #111;    /* fond sombre derrière l'image */
+            background-color: #111;
             transition: transform 0.4s ease;
         }
 
@@ -32,7 +39,15 @@
             transform: scale(1.03);
         }
 
-        /* Bandeau nom toujours visible en bas */
+        /* ============================================
+           Effet hover CSS pur — pas de JavaScript.
+           Par défaut : bandeau visible, overlay caché.
+           Au survol : overlay visible, bandeau caché.
+           On joue uniquement sur opacity: 0 / opacity: 1
+           avec le sélecteur :hover.
+           ============================================ */
+
+        /* Bandeau nom : toujours visible en bas de la carte */
         .prof-nom-bandeau {
             position: absolute;
             bottom: 0;
@@ -59,10 +74,10 @@
             display: block;
         }
 
-        /* Overlay parcours — caché par défaut, visible au survol */
+        /* Overlay : couvre toute la carte, opacity: 0 = invisible */
         .prof-overlay {
             position: absolute;
-            inset: 0;                  /* couvre toute la carte */
+            inset: 0;
             background: rgba(10,49,108,0.93);
             display: flex;
             flex-direction: column;
@@ -74,12 +89,12 @@
             transition: opacity 0.35s ease;
         }
 
-        /* Affichage de l'overlay au survol */
+        /* Au survol : overlay passe à opacity: 1 = visible */
         .prof-carte:hover .prof-overlay {
             opacity: 1;
         }
 
-        /* Cacher le bandeau quand l'overlay est visible */
+        /* Au survol : bandeau passe à opacity: 0 = caché */
         .prof-carte:hover .prof-nom-bandeau {
             opacity: 0;
         }
@@ -107,7 +122,7 @@
             margin: 0;
         }
 
-        /* Grille en 2 colonnes bien larges */
+        /* Grille 2 colonnes pour les cartes profs */
         .grille-profs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -115,19 +130,18 @@
         }
 
         @media (max-width: 768px) {
-            .grille-profs {
-                grid-template-columns: 1fr;
-            }
-            .prof-photo {
-                height: 300px;
-            }
+            .grille-profs { grid-template-columns: 1fr; }
+            .prof-photo   { height: 300px; }
         }
     </style>
 </head>
 <body>
 
 <!-- ================================================
-     EN-TÊTE (obligatoire)
+     EN-TÊTE
+     Même header que toutes les pages.
+     Le lien "Corps Enseignant" a class="active"
+     pour être mis en surbrillance cyan.
      ================================================ -->
 <header>
     <div class="header-inner">
@@ -146,15 +160,14 @@
                 <li><a href="apropos.html">Contact &amp; À propos</a></li>
             </ul>
         </nav>
-        <button class="burger" aria-label="Ouvrir le menu">
-            <span></span><span></span><span></span>
-        </button>
     </div>
 </header>
 
 
 <!-- ================================================
      HERO PAGE
+     Bandeau titre avec fil d'Ariane :
+     Accueil > Corps Enseignant & Recherche
      ================================================ -->
 <section class="page-hero">
     <div class="container">
@@ -168,7 +181,12 @@
 
 
 <!-- ================================================
-     PRÉSENTATION DE L'ÉQUIPE
+     CARTES ENSEIGNANTS
+     4 enseignants réels de l'EFREI avec leurs vraies
+     photos et leurs vrais parcours.
+     Chaque carte = photo + bandeau nom (toujours
+     visible) + overlay bio (visible au survol).
+     L'effet est en CSS pur, sans JavaScript.
      ================================================ -->
 <section class="section">
     <div class="container">
@@ -180,19 +198,14 @@
 
         <div class="grille-profs">
 
-            <!-- Prof 1 : Cherifa Ben Khelil -->
             <div class="prof-carte">
-                <img
-                    class="prof-photo"
-                    src="images/cherifa.png"
-                    alt="Photo de Cherifa Ben Khelil"
-                >
+                <img class="prof-photo" src="images/cherifa.png" alt="Photo de Cherifa Ben Khelil">
                 <!-- Bandeau nom visible en permanence -->
                 <div class="prof-nom-bandeau">
                     <h3>Cherifa Ben Khelil</h3>
                     <span class="prof-titre">Maître de Conférences</span>
                 </div>
-                <!-- Overlay parcours au survol -->
+                <!-- Overlay bio visible uniquement au survol -->
                 <div class="prof-overlay">
                     <h3>Cherifa Ben Khelil</h3>
                     <span class="prof-titre">Maître de Conférences</span>
@@ -205,13 +218,8 @@
                 </div>
             </div>
 
-            <!-- Prof 2 : Carlo Bianca -->
             <div class="prof-carte">
-                <img
-                    class="prof-photo"
-                    src="images/bianca.png"
-                    alt="Photo de Carlo Bianca"
-                >
+                <img class="prof-photo" src="images/bianca.png" alt="Photo de Carlo Bianca">
                 <div class="prof-nom-bandeau">
                     <h3>Carlo Bianca</h3>
                     <span class="prof-titre">Professeur — Mathématiques pour l'Ingénieur</span>
@@ -228,13 +236,8 @@
                 </div>
             </div>
 
-            <!-- Prof 3 : Asma Gabis -->
             <div class="prof-carte">
-                <img
-                    class="prof-photo"
-                    src="images/asma.png"
-                    alt="Photo de Asma Gabis"
-                >
+                <img class="prof-photo" src="images/asma.png" alt="Photo de Asma Gabis">
                 <div class="prof-nom-bandeau">
                     <h3>Asma Gabis</h3>
                     <span class="prof-titre">Maître de Conférences — Informatique</span>
@@ -251,13 +254,9 @@
                 </div>
             </div>
 
-            <!-- Prof 4 : Mohamed Hamidi -->
+            <!-- Mohamed Hamidi = le prof qui encadre le projet TI402 -->
             <div class="prof-carte">
-                <img
-                    class="prof-photo"
-                    src="images/mohamed.png"
-                    alt="Photo de Mohamed Hamidi"
-                >
+                <img class="prof-photo" src="images/mohamed.png" alt="Photo de Mohamed Hamidi">
                 <div class="prof-nom-bandeau">
                     <h3>Mohamed Hamidi</h3>
                     <span class="prof-titre">Maître de Conférences — Sécurité &amp; Vision par Ordinateur</span>
@@ -282,6 +281,8 @@
 
 <!-- ================================================
      DOMAINES D'EXPERTISE
+     4 cartes résumant les axes de recherche :
+     IA, cyberdéfense, maths, big data.
      ================================================ -->
 <section class="section section-gris">
     <div class="container">
@@ -339,7 +340,10 @@
 
 
 <!-- ================================================
-     PUBLICATIONS & PROJETS DE RECHERCHE (tableau)
+     TABLEAU PUBLICATIONS — élément obligatoire.
+     Liste les thèses et publications des 4 enseignants.
+     5 colonnes : auteur, titre, domaine, année, journal.
+     Les données sont réelles.
      ================================================ -->
 <section class="section">
     <div class="container">
@@ -403,7 +407,9 @@
 
 
 <!-- ================================================
-     PIED DE PAGE (obligatoire)
+     PIED DE PAGE
+     Barre footer contient le lien obligatoire
+     vers "À propos du projet".
      ================================================ -->
 <footer>
     <div class="footer-grille">
@@ -427,6 +433,7 @@
             <a href="apropos.html#faq">FAQ</a>
         </div>
     </div>
+    <!-- Barre obligatoire selon l'énoncé — lien vers À propos du projet -->
     <div class="footer-nav">
         <div>
             <a href="index.html">Accueil</a> |
@@ -443,7 +450,6 @@
     </div>
 </footer>
 
-<div id="toast"></div>
 <script src="script.js"></script>
 </body>
 </html>
